@@ -1,91 +1,399 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+'use client';
+import Image from 'next/image';
+import { Text, View, Avatar } from 'reshaped';
+import ChartCard from '../components/UI/ChartCard';
+import styles from './page.module.css';
+import ReactFlow, {
+  Background,
+  SmoothStepEdge,
+  Edge,
+  MarkerType,
+} from 'reactflow';
+import 'reactflow/dist/style.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const edges: Edge<any>[] = [
+  {
+    id: '4-1',
+    source: '4',
+    sourceHandle: 'a',
+    target: '1',
+    targetHandle: 'b',
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      width: 30,
+      height: 30,
+    },
+    // animated: true,
+  },
+  {
+    id: '5-1',
+    source: '5',
+    sourceHandle: 'a',
+    target: '1',
+    targetHandle: 'b',
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      width: 30,
+      height: 30,
+    },
+  },
+  {
+    id: '4-2',
+    source: '4',
+    sourceHandle: 'a',
+    target: '2',
+    targetHandle: 'b',
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      width: 30,
+      height: 30,
+    },
+  },
+  {
+    id: '5-2',
+    source: '5',
+    sourceHandle: 'a',
+    target: '2',
+    targetHandle: 'b',
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      width: 30,
+      height: 30,
+    },
+  },
+  {
+    id: '4-3',
+    source: '4',
+    sourceHandle: 'a',
+    target: '3',
+    targetHandle: 'b',
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      width: 30,
+      height: 30,
+    },
+  },
+  {
+    id: '5-3',
+    source: '5',
+    sourceHandle: 'a',
+    target: '3',
+    targetHandle: 'b',
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      width: 30,
+      height: 30,
+    },
+  },
+];
+
+const nodes = [
+  {
+    id: '1',
+    data: {
+      logo: '/vercelIcon.svg',
+      toolType: 'FRONTEND',
+      toolName: 'Vercel',
+      relatedLogos: [
+        { logo: '/devCycle.svg', title: 'DevCycle' },
+        { logo: '/doppler.svg', title: 'Doppler' },
+        { logo: '/clerk.svg', title: 'Clerk' },
+        { logo: '/beagle.svg', title: 'Beagle Security' },
+      ],
+      hoverDetails: {
+        title: 'DATABASE',
+        items: [
+          {
+            logo: '/fauna.svg',
+            title: 'Fauna',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/github.svg',
+            title: 'Github',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/vercelIcon.svg',
+            title: 'Vercel',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/beagle.svg',
+            title: 'Beagle',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+        ],
+      },
+    },
+    position: { x: 50, y: 0 },
+    type: 'chartCard',
+  },
+  {
+    id: '2',
+    data: {
+      logo: '/workers.svg',
+      toolType: 'FUNCTIONS',
+      toolName: 'Workers',
+      relatedLogos: [
+        { logo: '/doppler.svg', title: 'Doppler' },
+        { logo: '/clerk.svg', title: 'Clerk' },
+        { logo: '/beagle.svg', title: 'Beagle Security' },
+      ],
+      hoverDetails: {
+        title: 'Database',
+        items: [
+          {
+            logo: '/fauna.svg',
+            title: 'Fauna',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/github.svg',
+            title: 'Github',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/vercelIcon.svg',
+            title: 'Vercel',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/beagle.svg',
+            title: 'Beagle',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+        ],
+      },
+    },
+    position: { x: 450, y: 0 },
+    type: 'chartCard',
+  },
+  {
+    id: '3',
+    data: {
+      logo: '/fauna.svg',
+      toolType: 'DATABASE',
+      toolName: 'Fauna',
+      relatedLogos: [
+        { logo: '/meiliSearch.svg', title: 'MeiliSearch' },
+        { logo: '/vertex.svg', title: 'Vertex' },
+        { logo: '/clerk.svg', title: 'Clerk' },
+        { logo: '/beagle.svg', title: 'Beagle Security' },
+      ],
+      hoverDetails: {
+        title: 'Database',
+        items: [
+          {
+            logo: '/fauna.svg',
+            title: 'Fauna',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/github.svg',
+            title: 'Github',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/vercelIcon.svg',
+            title: 'Vercel',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/beagle.svg',
+            title: 'Beagle',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+        ],
+      },
+    },
+    position: { x: 850, y: 0 },
+    type: 'chartCard',
+  },
+  {
+    id: '4',
+    data: {
+      logo: '/github.svg',
+      toolType: 'CODE REPOSITORY',
+      toolName: 'GitHub',
+      relatedLogos: [
+        { logo: '/sonarCloud.svg', title: 'SonarCloud' },
+        { logo: '/doppler.svg', title: 'Doppler' },
+      ],
+      hoverDetails: {
+        title: 'Database',
+        items: [
+          {
+            logo: '/fauna.svg',
+            title: 'Fauna',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/github.svg',
+            title: 'Github',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/vercelIcon.svg',
+            title: 'Vercel',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/beagle.svg',
+            title: 'Beagle',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+        ],
+      },
+    },
+    position: { x: 150, y: 300 },
+    type: 'chartCard',
+  },
+  {
+    id: '5',
+    data: {
+      logo: '/bit.svg',
+      toolType: 'COMPONENTS',
+      toolName: 'Bit',
+      relatedLogos: [
+        { logo: '/figma.svg', title: 'Figma' },
+        { logo: '/plasmic.svg', title: 'Plasmic' },
+      ],
+      hoverDetails: {
+        title: 'Database',
+        items: [
+          {
+            logo: '/fauna.svg',
+            title: 'Fauna',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/github.svg',
+            title: 'Github',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/vercelIcon.svg',
+            title: 'Vercel',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+          {
+            logo: '/beagle.svg',
+            title: 'Beagle',
+            ranking: 4,
+            description:
+              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          },
+        ],
+      },
+    },
+    position: { x: 750, y: 300 },
+    type: 'chartCard',
+  },
+];
+
+const userAvatars = [
+  '/defaultAvatar.svg',
+  '/defaultAvatar.svg',
+  '/defaultAvatar.svg',
+  '/defaultAvatar.svg',
+];
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <View align='center' gap={2} direction='column' paddingTop={11}>
+      <Image src='/upArrow.svg' height={104} width={104} alt='Up arrow' />
+      <View paddingBottom={8} justify='center'>
+        <Text className={styles.mainText} variant='body-medium-1'>
+          We’ll Level-up
+          <br /> your business
+        </Text>
+      </View>
+
+      <View
+        direction='row'
+        borderRadius='circular'
+        backgroundColor='base'
+        padding={3}
+        borderColor='neutral-faded'
+        className={styles.userAvatar}
+      >
+        {userAvatars.map((avatar) => (
+          <Avatar src={avatar} size={16} />
+        ))}
+      </View>
+
+      <View paddingTop={53}>
+        <Text className={styles.subText} variant='featured-1'>
+          Best in class JAMstack
+        </Text>
+      </View>
+
+      <View
+        height={155}
+        paddingTop={26.75}
+        width='100%'
+        justify='center'
+        align='center'
+      >
+        <View width='1200px' height='100%'>
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            nodeTypes={{ chartCard: ChartCard }}
+            edgeTypes={{ default: SmoothStepEdge }}
+            nodesDraggable={false}
+            nodesConnectable={false}
+            edgesFocusable={false}
+            panOnDrag={false}
+            zoomOnScroll={false}
+            zoomOnPinch={false}
+            zoomOnDoubleClick={false}
+            selectNodesOnDrag={false}
+            connectOnClick={false}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            {/* <Background /> */}
+          </ReactFlow>
+        </View>
+      </View>
+    </View>
+  );
 }
