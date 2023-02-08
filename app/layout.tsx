@@ -3,6 +3,7 @@ import { Reshaped } from 'components/Reshaped/Reshaped';
 import 'reshaped/themes/reshaped/theme.css';
 import { Poppins } from '@next/font/google';
 // import 'components/Reshaped/theme.css';
+import 'src/themes/productTheme/theme.css';
 
 const poppinsFont = Poppins({
   subsets: ['latin'],
@@ -22,8 +23,9 @@ export default function RootLayout({
      */}
       <head />
 
-      <body className={poppinsFont.className}>
-        <Reshaped theme='reshaped' defaultColorMode='dark'>
+      <body>
+        {/* <Reshaped theme='reshaped' defaultColorMode='dark'> */}
+        <Reshaped theme='productTheme' defaultColorMode='dark'>
           {children}
         </Reshaped>
       </body>

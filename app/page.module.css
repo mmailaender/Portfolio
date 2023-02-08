@@ -1,5 +1,4 @@
 .mainText {
-  font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 56px;
@@ -11,7 +10,6 @@
 }
 
 .subText {
-  font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
