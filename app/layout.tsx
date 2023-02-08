@@ -21,9 +21,12 @@ export default function RootLayout({
       head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
      */}
       <head />
-      <Reshaped theme='reshaped' defaultColorMode='dark'>
-        <body className={poppinsFont.className}>{children}</body>
-      </Reshaped>
+
+      <body className={poppinsFont.className}>
+        <Reshaped theme='reshaped' defaultColorMode='dark'>
+          {children}
+        </Reshaped>
+      </body>
     </html>
   );
 }
