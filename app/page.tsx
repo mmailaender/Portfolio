@@ -383,6 +383,7 @@ export default function Home() {
             zoomOnDoubleClick={false}
             selectNodesOnDrag={false}
             connectOnClick={false}
+            proOptions={{ hideAttribution: true }}
           ></ReactFlow>
         </View>
       </View>
