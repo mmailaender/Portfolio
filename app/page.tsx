@@ -3,12 +3,7 @@ import Image from 'next/image';
 import { Text, View, Avatar } from 'reshaped';
 import ChartCard from '../components/UI/ChartCard';
 import styles from './page.module.css';
-import ReactFlow, {
-  Background,
-  SmoothStepEdge,
-  Edge,
-  MarkerType,
-} from 'reactflow';
+import ReactFlow, { SmoothStepEdge, Edge, MarkerType } from 'reactflow';
 import 'reactflow/dist/style.css';
 
 const edges: Edge<any>[] = [
@@ -23,7 +18,6 @@ const edges: Edge<any>[] = [
       width: 30,
       height: 30,
     },
-    // animated: true,
   },
   {
     id: '5-1',
@@ -389,9 +383,7 @@ export default function Home() {
             zoomOnDoubleClick={false}
             selectNodesOnDrag={false}
             connectOnClick={false}
-          >
-            {/* <Background /> */}
-          </ReactFlow>
+          ></ReactFlow>
         </View>
       </View>
     </View>

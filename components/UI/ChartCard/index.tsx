@@ -74,7 +74,6 @@ export default function ChartCard({ data }: ChartCardType) {
       </ReactFlowProvider>
 
       <Popover triggerType='hover'>
-        {/* <View> */}
         <Popover.Trigger>
           {(attributes) => (
             <Actionable attributes={attributes}>
@@ -108,7 +107,6 @@ export default function ChartCard({ data }: ChartCardType) {
                     gap={2}
                     direction='row'
                     align={'center'}
-                    // justify='flex-start'
                   >
                     {data.relatedLogos.map((logo, index) => (
                       <Tooltip key={index} text={logo.title}>
@@ -146,7 +144,6 @@ export default function ChartCard({ data }: ChartCardType) {
                       direction='row'
                       align={'center'}
                       justify='start'
-                      // paddingStart={2}
                       paddingEnd={5}
                       paddingBottom={5}
                     >
@@ -157,14 +154,12 @@ export default function ChartCard({ data }: ChartCardType) {
                           gap={2}
                           paddingStart={0}
                         >
-                          {/* <Icon autoWidth padding={0}> */}
                           <Image
                             src={item.logo}
                             height={28}
                             width={25}
                             alt={item.title}
                           />
-                          {/* </Icon> */}
                           <View>
                             <Text variant='body-strong-1'>{item.title}</Text>
                           </View>{' '}
@@ -179,14 +174,13 @@ export default function ChartCard({ data }: ChartCardType) {
                           paddingStart={0}
                           gap={2}
                         >
-                          {/* <Icon padding={0}> */}
                           <Image
                             src='/star.svg'
                             height={16}
                             width={16}
                             alt='Star'
                           />
-                          {/* </Icon> */}
+
                           <Text variant='body-2'>{item.ranking}</Text>
                         </View>
                       </View.Item>
@@ -203,7 +197,6 @@ export default function ChartCard({ data }: ChartCardType) {
             </View>
           </View>
         </Popover.Content>
-        {/* </View> */}
       </Popover>
     </div>
   );
