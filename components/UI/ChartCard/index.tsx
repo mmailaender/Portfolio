@@ -7,12 +7,12 @@ import {
   View,
   Text,
   Popover,
-  Card,
   Timeline,
   Tooltip,
   Actionable,
   ThemeProvider,
 } from '../../Reshaped/Reshaped';
+import styles from './chartCard.module.css';
 
 const Icon = ({ children, attributes }: any) => (
   <View
@@ -85,49 +85,49 @@ export default function ChartCard({ data }: ChartCardType) {
                 borderRadius={'medium'}
                 direction='column'
                 width='325px'
+                padding={4}
+                className={styles.detailContainer}
               >
-                <Card className='hoverBorder'>
-                  <View direction='row' align='center' gap={4}>
-                    <Image
-                      src={data.logo}
-                      height={48}
-                      width={48}
-                      alt={data.toolName}
-                    />
+                <View direction='row' align='center' gap={4}>
+                  <Image
+                    src={data.logo}
+                    height={48}
+                    width={48}
+                    alt={data.toolName}
+                  />
 
-                    <View direction='column'>
-                      <Text color='primary' variant='caption-2'>
-                        {data.toolType}
-                      </Text>
-                      <Text>{data.toolName}</Text>
-                    </View>
+                  <View direction='column'>
+                    <Text color='primary' variant='caption-2'>
+                      {data.toolType}
+                    </Text>
+                    <Text>{data.toolName}</Text>
                   </View>
-                  <View
-                    paddingTop={3}
-                    paddingStart={15}
-                    paddingEnd={10}
-                    gap={2}
-                    direction='row'
-                    align={'center'}
-                  >
-                    {data.relatedLogos.map((logo, index) => (
-                      <ThemeProvider theme='toolTip'>
-                        <Tooltip key={index} text={logo.title}>
-                          {(attributes) => (
-                            <Icon attributes={attributes}>
-                              <Image
-                                src={logo.logo}
-                                height={20}
-                                width={20}
-                                alt={logo.title}
-                              />
-                            </Icon>
-                          )}
-                        </Tooltip>
-                      </ThemeProvider>
-                    ))}
-                  </View>
-                </Card>
+                </View>
+                <View
+                  paddingTop={3}
+                  paddingStart={15}
+                  paddingEnd={10}
+                  gap={2}
+                  direction='row'
+                  align={'center'}
+                >
+                  {data.relatedLogos.map((logo, index) => (
+                    <ThemeProvider theme='toolTip'>
+                      <Tooltip key={index} text={logo.title}>
+                        {(attributes) => (
+                          <Icon attributes={attributes}>
+                            <Image
+                              src={logo.logo}
+                              height={20}
+                              width={20}
+                              alt={logo.title}
+                            />
+                          </Icon>
+                        )}
+                      </Tooltip>
+                    </ThemeProvider>
+                  ))}
+                </View>
               </View>
             </Actionable>
           )}
