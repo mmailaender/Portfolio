@@ -279,6 +279,22 @@
 --rs-line-height-caption-2-xl: 16px;
 --rs-font-family-caption-2-xl: var(--rs-font-family-body);
 --rs-font-weight-caption-2-xl: var(--rs-font-weight-bold);
+--rs-font-size-display-31: 38px;
+--rs-line-height-display-31: 20px;
+--rs-font-family-display-31: var(--rs-font-family-body);
+--rs-font-weight-display-31: var(--rs-font-weight-regular);
+--rs-font-size-display-31-m: 38px;
+--rs-line-height-display-31-m: 20px;
+--rs-font-family-display-31-m: var(--rs-font-family-body);
+--rs-font-weight-display-31-m: var(--rs-font-weight-regular);
+--rs-font-size-display-31-l: 38px;
+--rs-line-height-display-31-l: 20px;
+--rs-font-family-display-31-l: var(--rs-font-family-body);
+--rs-font-weight-display-31-l: var(--rs-font-weight-regular);
+--rs-font-size-display-31-xl: 38px;
+--rs-line-height-display-31-xl: 20px;
+--rs-font-family-display-31-xl: var(--rs-font-family-body);
+--rs-font-weight-display-31-xl: var(--rs-font-weight-regular);
 --rs-unit-base: 4px;
 --rs-unit-radius-small: 4px;
 --rs-unit-radius-medium: 8px;
@@ -353,6 +369,7 @@
 --rs-color-background-page-faded: #F8F8F8;
 --rs-color-background-base: #FFFFFF;
 --rs-color-background-elevated: #FFFFFF;
+--rs-color-chart-color: red;
 --rs-color-on-background-neutral: #000;
 --rs-color-rgb-background-neutral: 223, 226, 234;
 --rs-color-rgb-background-neutral-faded: 244, 245, 247;
@@ -397,6 +414,7 @@
 --rs-color-background-page-faded: #11171F;
 --rs-color-background-base: #181C25;
 --rs-color-background-elevated: #1C212B;
+--rs-color-chart-color: yellow;
 --rs-color-on-background-neutral: #fff;
 --rs-color-rgb-background-neutral: 48, 55, 74;
 --rs-color-rgb-background-neutral-faded: 36, 41, 56;

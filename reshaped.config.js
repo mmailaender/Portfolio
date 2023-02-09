@@ -6,6 +6,20 @@ const config = {
           family: 'Poppins, sans-serif',
         },
       },
+      color: { chartColor: { hex: 'red', hexDark: 'yellow' } },
+
+      font: {
+        display31: {
+          fontSize: { px: 38 },
+          lineHeight: { px: 20 },
+          fontWeightToken: 'regular',
+          fontFamilyToken: 'body',
+          responsive: {
+            s: 'title1',
+            l: 'display3',
+          },
+        },
+      },
     },
   },
   themeFragments: {

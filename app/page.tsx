@@ -334,6 +334,18 @@ const userAvatars = [
 export default function Home() {
   return (
     <View align='center' gap={2} direction='column' paddingTop={11}>
+      <Text
+        // variant='display-31'
+        // color='chart'
+        attributes={{
+          style: {
+            color: 'var(--rs-color-chart-color)',
+            // fontSize: 'var(--rs-font-size-display-31)',
+          },
+        }}
+      >
+        Theme cheking
+      </Text>
       <Image src='/upArrow.svg' height={104} width={104} alt='Up arrow' />
       <View paddingBottom={8} justify='center'>
         <Text className={styles.mainText} variant='body-medium-1'>
