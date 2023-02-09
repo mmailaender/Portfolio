@@ -8,6 +8,13 @@ const config = {
       },
     },
   },
+  themeFragments: {
+    toolTip: {
+      color: {
+        foregroundNeutral: { hex: '#ffffff', hexDark: '#000000' },
+      },
+    },
+  },
 };
 
 module.exports = config;

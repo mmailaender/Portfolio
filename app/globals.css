@@ -102,6 +102,10 @@ a {
   text-decoration: none;
 }
 
+.hoverBorder {
+  background-color: inherit !important;
+}
+
 .hoverBorder:hover {
   border: 1px solid #9d9cf7 !important;
 }

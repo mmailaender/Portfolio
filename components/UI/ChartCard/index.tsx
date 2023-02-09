@@ -1,4 +1,5 @@
 'use client';
+import 'src/themes/fragments/toolTip/theme.css';
 import React from 'react';
 import Image from 'next/image';
 import { Handle, Position, ReactFlowProvider } from 'reactflow';
@@ -10,6 +11,7 @@ import {
   Timeline,
   Tooltip,
   Actionable,
+  ThemeProvider,
 } from '../../Reshaped/Reshaped';
 
 const Icon = ({ children, attributes }: any) => (
@@ -109,18 +111,20 @@ export default function ChartCard({ data }: ChartCardType) {
                     align={'center'}
                   >
                     {data.relatedLogos.map((logo, index) => (
-                      <Tooltip key={index} text={logo.title}>
-                        {(attributes) => (
-                          <Icon attributes={attributes}>
-                            <Image
-                              src={logo.logo}
-                              height={20}
-                              width={20}
-                              alt={logo.title}
-                            />
-                          </Icon>
-                        )}
-                      </Tooltip>
+                      <ThemeProvider theme='toolTip'>
+                        <Tooltip key={index} text={logo.title}>
+                          {(attributes) => (
+                            <Icon attributes={attributes}>
+                              <Image
+                                src={logo.logo}
+                                height={20}
+                                width={20}
+                                alt={logo.title}
+                              />
+                            </Icon>
+                          )}
+                        </Tooltip>
+                      </ThemeProvider>
                     ))}
                   </View>
                 </Card>
