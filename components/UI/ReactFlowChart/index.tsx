@@ -41,6 +41,7 @@ export default function ReactFlowChart({
               zoomOnDoubleClick={false}
               selectNodesOnDrag={false}
               connectOnClick={false}
+              preventScrolling={false}
               proOptions={{ hideAttribution: true }}
             />
           </View>
