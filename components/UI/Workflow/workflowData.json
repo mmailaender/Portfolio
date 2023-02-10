@@ -1,0 +1,74 @@
+[
+  {
+    "step": "Understand Customer",
+    "icon": "/user.svg",
+    "items": [
+      {
+        "icon": "/search.svg",
+        "title": "Research"
+      },
+      {
+        "icon": "/cursor.svg",
+        "title": "Interact"
+      }
+    ]
+  },
+  {
+    "step": "Create Strategy",
+    "icon": "/strategy.svg",
+    "items": [
+      {
+        "icon": "/eye.svg",
+        "title": "Product Vision"
+      },
+      {
+        "icon": "/path.svg",
+        "title": "Product Roadmap"
+      },
+      {
+        "icon": "/synergy.svg",
+        "title": "Find Synergies"
+      }
+    ]
+  },
+  {
+    "step": "Develop Product",
+    "icon": "/developProduct.svg",
+    "items": [
+      {
+        "icon": "/eye.svg",
+        "title": "Design"
+      },
+      {
+        "icon": "/architecture.svg",
+        "title": "Architecture"
+      },
+      {
+        "icon": "/code.svg",
+        "title": "Code"
+      },
+      {
+        "icon": "/test.svg",
+        "title": "Test"
+      },
+      {
+        "icon": "/equalizer.svg",
+        "title": "Operate"
+      }
+    ]
+  },
+  {
+    "step": "Analyze",
+    "icon": "/analyze.svg",
+    "items": [
+      {
+        "icon": "/inspect.svg",
+        "title": "Inspect"
+      },
+      {
+        "icon": "/adapt.svg",
+        "title": "Adapt"
+      }
+    ]
+  }
+]

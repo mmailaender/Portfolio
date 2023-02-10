@@ -1,18 +1,21 @@
-import './globals.css'
+import './globals.css';
+import 'src/themes/productTheme/theme.css';
+import 'reactflow/dist/style.css';
+import { Reshaped } from 'components/Reshaped/Reshaped';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang='en'>
       <head />
-      <body>{children}</body>
+      <body>
+        <Reshaped theme='productTheme' defaultColorMode='dark'>
+          {children}
+        </Reshaped>
+      </body>
     </html>
-  )
+  );
 }
