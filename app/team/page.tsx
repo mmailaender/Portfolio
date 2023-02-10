@@ -4,7 +4,6 @@ import { Text, View, Avatar } from 'reshaped';
 import ReactFlowChart from '@/components/UI/ReactFlowChart';
 import { edges } from '../../__mocks__/edges';
 import { nodes } from '../../__mocks__/nodes';
-import 'reactflow/dist/style.css';
 import styles from './page.module.css';
 
 const userAvatars = [

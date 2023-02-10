@@ -1,5 +1,6 @@
 import './globals.css';
 import 'src/themes/productTheme/theme.css';
+import 'reactflow/dist/style.css';
 import { Reshaped } from 'components/Reshaped/Reshaped';
 
 export default function RootLayout({

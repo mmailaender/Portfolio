@@ -5,11 +5,14 @@ import StrengthCard from '@/components/UI/StrengthCard';
 import Experiences from '@/components/UI/Experiences';
 import strengthCardData from '../components/UI/StrengthCard/strengthCardData.json';
 import Workflow from '@/components/UI/Workflow';
+import ReactFlowChart from '@/components/UI/ReactFlowChart';
+import { nodes } from '@/__mocks__/nodes';
+import { edges } from '@/__mocks__/edges';
 
 export default function Home() {
   return (
     <View>
-      <View>
+      <View backgroundColor='page'>
         <View
           gap={4}
           direction='row'
@@ -47,13 +50,24 @@ export default function Home() {
             </Text>
           </View>
         </View>
-        <View>
-          <View paddingTop={50} direction='row' justify='center'>
-            <Workflow />
-          </View>
+
+        <View paddingTop={50} direction='row' justify='center'>
+          <Workflow />
         </View>
+
+        <ReactFlowChart
+          heading='Best in class JAMstack'
+          edges={edges}
+          nodes={nodes}
+        />
       </View>
-      <View align='center' paddingTop={20} gap={12} direction='column'>
+      <View
+        align='center'
+        paddingTop={20}
+        gap={12}
+        direction='column'
+        backgroundColor='base'
+      >
         <View maxWidth='649px'>
           <View direction='row' align='center' paddingBottom={12}>
             <View paddingEnd={6}>
@@ -98,7 +112,7 @@ export default function Home() {
           <View justify='center' paddingBottom={13}>
             <Text variant='title-3'>Strengths</Text>
           </View>
-          <View direction='row' justify='center'>
+          <View direction='row' justify='center' paddingBottom={10}>
             <View>
               {strengthCardData.map((cardData) => (
                 <StrengthCard
