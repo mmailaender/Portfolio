@@ -1,10 +1,10 @@
 'use client';
 import Image from 'next/image';
 import { Text, View, Avatar } from 'reshaped';
-import ChartCard from '../components/UI/ChartCard';
 import styles from './page.module.css';
-import ReactFlow, { SmoothStepEdge, Edge, MarkerType } from 'reactflow';
+import { Edge, MarkerType } from 'reactflow';
 import 'reactflow/dist/style.css';
+import ReactFlowChart from '@/components/UI/ReactFlowChart';
 
 const edges: Edge<any>[] = [
   {
@@ -354,39 +354,11 @@ export default function Home() {
           <Avatar src={avatar} size={16} />
         ))}
       </View>
-
-      <View paddingTop={53}>
-        <Text className={styles.subText} variant='featured-1'>
-          Best in class JAMstack
-        </Text>
-      </View>
-
-      <View
-        height={155}
-        paddingTop={26.75}
-        width='100%'
-        justify='center'
-        align='center'
-      >
-        <View width='1200px' height='100%'>
-          <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            nodeTypes={{ chartCard: ChartCard }}
-            edgeTypes={{ default: SmoothStepEdge }}
-            nodesDraggable={false}
-            nodesConnectable={false}
-            edgesFocusable={false}
-            panOnDrag={false}
-            zoomOnScroll={false}
-            zoomOnPinch={false}
-            zoomOnDoubleClick={false}
-            selectNodesOnDrag={false}
-            connectOnClick={false}
-            proOptions={{ hideAttribution: true }}
-          />
-        </View>
-      </View>
+      <ReactFlowChart
+        heading='Best in class JAMstack'
+        nodes={nodes}
+        edges={edges}
+      />
     </View>
   );
 }

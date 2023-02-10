@@ -1,5 +1,4 @@
 'use client';
-import 'src/themes/fragments/toolTip/theme.css';
 import React from 'react';
 import Image from 'next/image';
 import { Handle, Position, ReactFlowProvider } from 'reactflow';
@@ -8,9 +7,7 @@ import {
   Text,
   Popover,
   Timeline,
-  Tooltip,
   Actionable,
-  ThemeProvider,
 } from '../../Reshaped/Reshaped';
 import styles from './chartCard.module.css';
 
@@ -112,20 +109,50 @@ export default function ChartCard({ data }: ChartCardType) {
                   align={'center'}
                 >
                   {data.relatedLogos.map((logo, index) => (
-                    <ThemeProvider theme='toolTip'>
-                      <Tooltip key={index} text={logo.title}>
+                    <Popover triggerType='hover'>
+                      <Popover.Trigger>
                         {(attributes) => (
-                          <Icon attributes={attributes}>
-                            <Image
-                              src={logo.logo}
-                              height={20}
-                              width={20}
-                              alt={logo.title}
-                            />
-                          </Icon>
+                          <Actionable attributes={attributes}>
+                            <Icon attributes={attributes}>
+                              <Image
+                                src={logo.logo}
+                                height={20}
+                                width={20}
+                                alt={logo.title}
+                              />
+                            </Icon>
+                          </Actionable>
                         )}
-                      </Tooltip>
-                    </ThemeProvider>
+                      </Popover.Trigger>
+                      <Popover.Content>
+                        <View paddingBottom={3}>
+                          <Text color='primary' variant='body-strong-2'>
+                            DATABASE
+                          </Text>
+                        </View>
+                        <View width='250px'>
+                          <View>
+                            <View direction='row' align={'center'} gap={2}>
+                              <Image
+                                src='/fauna.svg'
+                                height={32}
+                                width={32}
+                                alt='Fauna'
+                              />
+                              <View>
+                                <Text variant='body-strong-1'>Fauna</Text>
+                              </View>
+                            </View>
+                          </View>
+                          <View paddingTop={3}>
+                            <Text variant='caption-1'>
+                              Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry.
+                            </Text>
+                          </View>
+                        </View>
+                      </Popover.Content>
+                    </Popover>
                   ))}
                 </View>
               </View>
