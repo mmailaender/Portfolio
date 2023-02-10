@@ -1,364 +1,148 @@
 'use client';
+import CardComponent from '@/components/UI/CardComponent';
+import Experience from '@/components/UI/Experience';
 import Image from 'next/image';
-import { Text, View, Avatar } from 'reshaped';
-import styles from './page.module.css';
-import { Edge, MarkerType } from 'reactflow';
-import 'reactflow/dist/style.css';
-import ReactFlowChart from '@/components/UI/ReactFlowChart';
+import { Text, View } from 'reshaped';
 
-const edges: Edge<any>[] = [
-  {
-    id: '4-1',
-    source: '4',
-    sourceHandle: 'a',
-    target: '1',
-    targetHandle: 'b',
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      width: 30,
-      height: 30,
-    },
-  },
-  {
-    id: '5-1',
-    source: '5',
-    sourceHandle: 'a',
-    target: '1',
-    targetHandle: 'b',
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      width: 30,
-      height: 30,
-    },
-  },
-  {
-    id: '4-2',
-    source: '4',
-    sourceHandle: 'a',
-    target: '2',
-    targetHandle: 'b',
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      width: 30,
-      height: 30,
-    },
-  },
-  {
-    id: '5-2',
-    source: '5',
-    sourceHandle: 'a',
-    target: '2',
-    targetHandle: 'b',
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      width: 30,
-      height: 30,
-    },
-  },
-  {
-    id: '4-3',
-    source: '4',
-    sourceHandle: 'a',
-    target: '3',
-    targetHandle: 'b',
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      width: 30,
-      height: 30,
-    },
-  },
-  {
-    id: '5-3',
-    source: '5',
-    sourceHandle: 'a',
-    target: '3',
-    targetHandle: 'b',
-    markerEnd: {
-      type: MarkerType.ArrowClosed,
-      width: 30,
-      height: 30,
-    },
-  },
-];
-
-const nodes = [
-  {
-    id: '1',
-    data: {
-      logo: '/vercelIcon.svg',
-      toolType: 'FRONTEND',
-      toolName: 'Vercel',
-      relatedLogos: [
-        { logo: '/devCycle.svg', title: 'DevCycle' },
-        { logo: '/doppler.svg', title: 'Doppler' },
-        { logo: '/clerk.svg', title: 'Clerk' },
-        { logo: '/beagle.svg', title: 'Beagle Security' },
-      ],
-      hoverDetails: {
-        title: 'DATABASE',
-        items: [
-          {
-            logo: '/fauna.svg',
-            title: 'Fauna',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/github.svg',
-            title: 'Github',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/vercelIcon.svg',
-            title: 'Vercel',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/beagle.svg',
-            title: 'Beagle',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-        ],
-      },
-    },
-    position: { x: 50, y: 0 },
-    type: 'chartCard',
-  },
-  {
-    id: '2',
-    data: {
-      logo: '/workers.svg',
-      toolType: 'FUNCTIONS',
-      toolName: 'Workers',
-      relatedLogos: [
-        { logo: '/doppler.svg', title: 'Doppler' },
-        { logo: '/clerk.svg', title: 'Clerk' },
-        { logo: '/beagle.svg', title: 'Beagle Security' },
-      ],
-      hoverDetails: {
-        title: 'Database',
-        items: [
-          {
-            logo: '/fauna.svg',
-            title: 'Fauna',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/github.svg',
-            title: 'Github',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/vercelIcon.svg',
-            title: 'Vercel',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/beagle.svg',
-            title: 'Beagle',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-        ],
-      },
-    },
-    position: { x: 450, y: 0 },
-    type: 'chartCard',
-  },
-  {
-    id: '3',
-    data: {
-      logo: '/fauna.svg',
-      toolType: 'DATABASE',
-      toolName: 'Fauna',
-      relatedLogos: [
-        { logo: '/meiliSearch.svg', title: 'MeiliSearch' },
-        { logo: '/vertex.svg', title: 'Vertex' },
-        { logo: '/clerk.svg', title: 'Clerk' },
-        { logo: '/beagle.svg', title: 'Beagle Security' },
-      ],
-      hoverDetails: {
-        title: 'Database',
-        items: [
-          {
-            logo: '/fauna.svg',
-            title: 'Fauna',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/github.svg',
-            title: 'Github',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/vercelIcon.svg',
-            title: 'Vercel',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/beagle.svg',
-            title: 'Beagle',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-        ],
-      },
-    },
-    position: { x: 850, y: 0 },
-    type: 'chartCard',
-  },
-  {
-    id: '4',
-    data: {
-      logo: '/github.svg',
-      toolType: 'CODE REPOSITORY',
-      toolName: 'GitHub',
-      relatedLogos: [
-        { logo: '/sonarCloud.svg', title: 'SonarCloud' },
-        { logo: '/doppler.svg', title: 'Doppler' },
-      ],
-      hoverDetails: {
-        title: 'Database',
-        items: [
-          {
-            logo: '/fauna.svg',
-            title: 'Fauna',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/github.svg',
-            title: 'Github',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/vercelIcon.svg',
-            title: 'Vercel',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/beagle.svg',
-            title: 'Beagle',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-        ],
-      },
-    },
-    position: { x: 150, y: 300 },
-    type: 'chartCard',
-  },
-  {
-    id: '5',
-    data: {
-      logo: '/bit.svg',
-      toolType: 'COMPONENTS',
-      toolName: 'Bit',
-      relatedLogos: [
-        { logo: '/figma.svg', title: 'Figma' },
-        { logo: '/plasmic.svg', title: 'Plasmic' },
-      ],
-      hoverDetails: {
-        title: 'Database',
-        items: [
-          {
-            logo: '/fauna.svg',
-            title: 'Fauna',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/github.svg',
-            title: 'Github',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/vercelIcon.svg',
-            title: 'Vercel',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-          {
-            logo: '/beagle.svg',
-            title: 'Beagle',
-            ranking: 4,
-            description:
-              ' Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-          },
-        ],
-      },
-    },
-    position: { x: 750, y: 300 },
-    type: 'chartCard',
-  },
-];
-
-const userAvatars = [
-  '/defaultAvatar.svg',
-  '/defaultAvatar.svg',
-  '/defaultAvatar.svg',
-  '/defaultAvatar.svg',
-];
+const Icon = ({ children, attributes }: any) => (
+  <View
+    attributes={attributes}
+    padding={2}
+    borderRadius={'circular'}
+    backgroundColor='base'
+  >
+    {children}
+  </View>
+);
 
 export default function Home() {
   return (
-    <View align='center' gap={2} direction='column' paddingTop={11}>
-      <Image src='/upArrow.svg' height={104} width={104} alt='Up arrow' />
-      <View paddingBottom={8} justify='center'>
-        <Text className={styles.mainText} variant='body-medium-1'>
-          We’ll Level-up
-          <br /> your business
-        </Text>
-      </View>
+    <View>
+      <View>
+        <View
+          gap={2}
+          direction='row'
+          align='center'
+          justify='center'
+          paddingTop={18}
+        >
+          <Image width={48} height={48} src='./mikeAvatar.svg' alt='emoji' />
+          <Text variant='featured-3' color='neutral-faded'>
+            Mike
+          </Text>
+        </View>
 
-      <View
-        direction='row'
-        borderRadius='circular'
-        backgroundColor='base'
-        padding={3}
-        borderColor='neutral-faded'
-        className={styles.userAvatar}
-      >
-        {userAvatars.map((avatar) => (
-          <Avatar src={avatar} size={16} />
-        ))}
+        <View align='center' paddingTop={12} direction='column'>
+          <View>
+            <Text variant='display-2'>
+              Develop, secure and scale your
+              <br />
+              <View direction='row' justify='center'>
+                software.
+                <Text color='primary' as='span'>
+                  Be independent
+                </Text>
+              </View>
+            </Text>
+          </View>
+
+          <View paddingTop={3}>
+            <Text variant='featured-2' color='neutral-faded'>
+              I help you get through the jungle of tools & processes to make
+              <br />
+              <View direction='row' justify='center'>
+                software development easy for you.
+              </View>
+            </Text>
+          </View>
+        </View>
       </View>
-      <ReactFlowChart
-        heading='Best in class JAMstack'
-        nodes={nodes}
-        edges={edges}
-      />
+      <View align='center' paddingTop={20} gap={12} direction='column'>
+        <View maxWidth='649px'>
+          <View direction='row' align='center' paddingBottom={12}>
+            <View paddingEnd={6}>
+              <Image
+                width={80}
+                height={80}
+                src='./mikeAvatar.svg'
+                alt='emoji'
+              />
+            </View>
+
+            <View.Item>
+              <Text variant='title-3' color='neutral'>
+                Mike
+              </Text>
+              <Text variant='body-medium-1' color='neutral-faded'>
+                CEO & Co-Founder, Personal Coach
+              </Text>
+            </View.Item>
+          </View>
+
+          <View>
+            <Text variant='body-medium-1'>
+              Creator, mentor, tech-lover and philanthropist. Mike is passionate
+              about helping people become the best version of themself in order
+              to make a positive impact on our world. He believes that great
+              tech products help support that mission.
+              <br />
+              <br />
+              He is currently helping Fauna enable thousands of developer to
+              become more easily software creator by simplifying development,
+              security and scaling at backend level.
+            </Text>
+          </View>
+          <Experience />
+        </View>
+
+        <View align='center' direction='column' paddingTop={18}>
+          <View justify='center' paddingBottom={13}>
+            <Text variant='title-3'>Strengths</Text>
+          </View>
+          <View direction='row' justify='center'>
+            <View>
+              <CardComponent
+                heading='Visionary'
+                imagePath='/cardVisionary.svg'
+                iconHeight={143}
+                description='I’m excited to think about the future and create a strategy to reach it.'
+              />
+              <CardComponent
+                heading='Focused'
+                imagePath='/cardFocused.svg'
+                iconHeight={103}
+                description='I like it to visualize our progress and seeing it finished. Working
+            with priorities, goals and continuous improvement of myself to
+            achieve the higher goal.'
+              />
+            </View>
+
+            <View>
+              <CardComponent
+                heading='Knowledge Hunger'
+                imagePath='/cardKnowledge.svg'
+                iconHeight={589}
+                description=''
+              />
+            </View>
+
+            <View>
+              <CardComponent
+                heading='Performance'
+                imagePath='/cardPerformance.svg'
+                iconHeight={123}
+                description='Being productive gives me immense satisfaction. I’m loving to achieve. Working with the best is activating my full passion.'
+              />
+              <CardComponent
+                heading='Synergies'
+                imagePath='/cardSynergies.svg'
+                iconHeight={123}
+                description='True strength can be only reached by combining people & companies that are seeking the same goals.'
+              />
+            </View>
+          </View>
+        </View>
+      </View>
     </View>
   );
 }
