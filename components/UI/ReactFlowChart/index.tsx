@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactFlow, { SmoothStepEdge, Edge } from 'reactflow';
 import { View, Text } from '../../Reshaped/Reshaped';
-import styles from '../../../app/page.module.css';
+import styles from './reactFlowChart.module.css';
 import ChartCard from '../ChartCard';
 
 type ReactFlowType = {
