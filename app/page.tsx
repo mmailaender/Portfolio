@@ -1,6 +1,6 @@
 'use client';
 import CardComponent from '@/components/UI/CardComponent';
-import Experience from '@/components/UI/Experience';
+import Experience from '@/components/UI/Experiences';
 import Image from 'next/image';
 import { Text, View } from 'reshaped';
 
