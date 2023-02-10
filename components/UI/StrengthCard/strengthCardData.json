@@ -1,0 +1,14 @@
+[
+  {
+    "heading": "Visionary",
+    "icon": "/cardVisionary.svg",
+    "iconHeight": 143,
+    "description": "I’m excited to think about the future and create a strategy to reach it."
+  },
+  {
+    "heading": "Focused",
+    "icon": "/cardFocused.svg",
+    "iconHeight": 103,
+    "description": "I like it to visualize our progress and seeing it finished. Working with with priorities, goals and continuous improvement of myself to achieve the higher goal. "
+  }
+]

@@ -1,26 +1,16 @@
 'use client';
-import CardComponent from '@/components/UI/CardComponent';
-import Experience from '@/components/UI/Experience';
 import Image from 'next/image';
 import { Text, View } from 'reshaped';
-
-const Icon = ({ children, attributes }: any) => (
-  <View
-    attributes={attributes}
-    padding={2}
-    borderRadius={'circular'}
-    backgroundColor='base'
-  >
-    {children}
-  </View>
-);
+import StrengthCard from '@/components/UI/StrengthCard';
+import Experiences from '@/components/UI/Experiences';
+import strengthCardData from '../components/UI/StrengthCard/strengthCardData.json';
 
 export default function Home() {
   return (
     <View>
       <View>
         <View
-          gap={2}
+          gap={4}
           direction='row'
           align='center'
           justify='center'
@@ -35,10 +25,9 @@ export default function Home() {
         <View align='center' paddingTop={12} direction='column'>
           <View>
             <Text variant='display-2'>
-              Develop, secure and scale your
-              <br />
+              <Text>Develop, secure and scale your</Text>
               <View direction='row' justify='center'>
-                software.
+                <Text>software.</Text>
                 <Text color='primary' as='span'>
                   Be independent
                 </Text>
@@ -48,14 +37,20 @@ export default function Home() {
 
           <View paddingTop={3}>
             <Text variant='featured-2' color='neutral-faded'>
-              I help you get through the jungle of tools & processes to make
-              <br />
+              <Text>
+                I help you get through the jungle of tools & processes to make
+              </Text>
               <View direction='row' justify='center'>
-                software development easy for you.
+                <Text>software development easy for you.</Text>
               </View>
             </Text>
           </View>
         </View>
+        {/* <View>
+          <View paddingTop={50} direction='row' justify='center'>
+            <Workflow />
+          </View>
+        </View> */}
       </View>
       <View align='center' paddingTop={20} gap={12} direction='column'>
         <View maxWidth='649px'>
@@ -80,19 +75,22 @@ export default function Home() {
           </View>
 
           <View>
-            <Text variant='body-medium-1'>
-              Creator, mentor, tech-lover and philanthropist. Mike is passionate
-              about helping people become the best version of themself in order
-              to make a positive impact on our world. He believes that great
-              tech products help support that mission.
+            <Text variant='body-medium-1' color='neutral'>
+              <Text>
+                Creator, mentor, tech-lover and philanthropist. Mike is
+                passionate about helping people become the best version of
+                themself in order to make a positive impact on our world. He
+                believes that great tech products help support that mission.
+              </Text>
               <br />
-              <br />
-              He is currently helping Fauna enable thousands of developer to
-              become more easily software creator by simplifying development,
-              security and scaling at backend level.
+              <Text>
+                He is currently helping Fauna enable thousands of developer to
+                become more easily software creator by simplifying development,
+                security and scaling at backend level.
+              </Text>
             </Text>
           </View>
-          <Experience />
+          <Experiences />
         </View>
 
         <View align='center' direction='column' paddingTop={18}>
@@ -101,41 +99,39 @@ export default function Home() {
           </View>
           <View direction='row' justify='center'>
             <View>
-              <CardComponent
-                heading='Visionary'
-                imagePath='/cardVisionary.svg'
-                iconHeight={143}
-                description='I’m excited to think about the future and create a strategy to reach it.'
-              />
-              <CardComponent
-                heading='Focused'
-                imagePath='/cardFocused.svg'
-                iconHeight={103}
-                description='I like it to visualize our progress and seeing it finished. Working
-            with priorities, goals and continuous improvement of myself to
-            achieve the higher goal.'
-              />
+              {strengthCardData.map((cardData) => (
+                <StrengthCard
+                  width={395}
+                  heading={cardData.heading}
+                  icon={cardData.icon}
+                  iconHeight={cardData.iconHeight}
+                  description={cardData.description}
+                />
+              ))}
             </View>
 
             <View>
-              <CardComponent
+              <StrengthCard
+                width={395}
                 heading='Knowledge Hunger'
-                imagePath='/cardKnowledge.svg'
+                icon='/cardKnowledge.svg'
                 iconHeight={589}
                 description=''
               />
             </View>
 
             <View>
-              <CardComponent
+              <StrengthCard
+                width={395}
                 heading='Performance'
-                imagePath='/cardPerformance.svg'
+                icon='/cardPerformance.svg'
                 iconHeight={123}
                 description='Being productive gives me immense satisfaction. I’m loving to achieve. Working with the best is activating my full passion.'
               />
-              <CardComponent
+              <StrengthCard
+                width={395}
                 heading='Synergies'
-                imagePath='/cardSynergies.svg'
+                icon='/cardSynergies.svg'
                 iconHeight={123}
                 description='True strength can be only reached by combining people & companies that are seeking the same goals.'
               />

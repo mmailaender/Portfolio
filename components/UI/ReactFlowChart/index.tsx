@@ -1,20 +1,15 @@
 'use client';
-import React from 'react';
-import ReactFlow, { SmoothStepEdge, Edge } from 'reactflow';
+import ReactFlow, { SmoothStepEdge } from 'reactflow';
 import { View, Text } from '../../Reshaped/Reshaped';
-import styles from './reactFlowChart.module.css';
 import ChartCard from '../ChartCard';
+import { ReactFlowChartPropType } from './types';
+import styles from './reactFlowChart.module.css';
 
-type ReactFlowType = {
-  heading: string;
-  nodes: any;
-  edges: Edge<any>[];
-};
 export default function ReactFlowChart({
   heading,
   nodes,
   edges,
-}: ReactFlowType) {
+}: ReactFlowChartPropType) {
   return (
     <>
       {heading && (

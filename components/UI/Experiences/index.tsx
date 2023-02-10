@@ -6,8 +6,6 @@ import ArrowDown from '../DownArrow';
 import ExperincesList from '../ExperiencesList';
 import styles from './experience.module.css';
 
-
-
 export default function Experiences() {
   const [expand, setExpand] = useState(false);
 

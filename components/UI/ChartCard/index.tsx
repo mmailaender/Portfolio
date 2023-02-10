@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import Image from 'next/image';
 import { Handle, Position, ReactFlowProvider } from 'reactflow';
 import {
@@ -9,6 +8,7 @@ import {
   Timeline,
   Actionable,
 } from '../../Reshaped/Reshaped';
+import { ChartCardPropsType } from './types';
 import styles from './chartCard.module.css';
 
 const Icon = ({ children, attributes }: any) => (
@@ -22,25 +22,7 @@ const Icon = ({ children, attributes }: any) => (
   </View>
 );
 
-type ChartCardType = {
-  data: {
-    logo: string;
-    toolType: string;
-    toolName: string;
-    relatedLogos: { logo: string; title: string }[];
-    hoverDetails: {
-      title: string;
-      items: {
-        logo: string;
-        title: string;
-        ranking: number | string;
-        description: string;
-      }[];
-    };
-  };
-};
-
-export default function ChartCard({ data }: ChartCardType) {
+export default function ChartCard({ data }: ChartCardPropsType) {
   const hoverDetails = data.hoverDetails;
 
   return (
