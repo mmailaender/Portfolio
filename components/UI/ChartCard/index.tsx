@@ -91,7 +91,8 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                   align={'center'}
                 >
                   {data.relatedLogos.map((logo, index) => (
-                    <Popover triggerType='hover'>
+                    // TODO: Replace index as iterable
+                    <Popover triggerType='hover' key={index}>
                       <Popover.Trigger>
                         {(attributes) => (
                           <Actionable attributes={attributes}>
@@ -151,8 +152,9 @@ export default function ChartCard({ data }: ChartCardPropsType) {
             </View>
             <View>
               <Timeline>
-                {hoverDetails.items.map((item) => (
-                  <Timeline.Item>
+                {hoverDetails.items.map((item, index) => (
+                  // TODO: Replace index as iterable
+                  <Timeline.Item key={index}>
                     <View
                       direction='row'
                       align={'center'}

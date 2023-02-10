@@ -7,8 +7,9 @@ import styles from './experienceList.module.css';
 export default function ExperincesList() {
   return (
     <Timeline>
-      {experiences.map((experience) => (
-        <View>
+      {experiences.map((experience, index) => (
+        // TODO: Replace index as iterable
+        <View key={index}>
           <Text as='span' variant='body-strong-1' color='neutral'>
             {experience.role}
             {experience.company && (
