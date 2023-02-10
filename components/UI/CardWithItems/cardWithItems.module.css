@@ -1,0 +1,17 @@
+.cardCountContainer {
+  border: 4px solid var(--rs-color-background-page);
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 50px;
+  box-sizing: border-box;
+}
+
+.listItems {
+  gap: 1px;
+}
+
+.itemsCard {
+  width: 100%;
+}

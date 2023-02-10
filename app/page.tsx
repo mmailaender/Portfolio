@@ -4,6 +4,7 @@ import { Text, View } from 'reshaped';
 import StrengthCard from '@/components/UI/StrengthCard';
 import Experiences from '@/components/UI/Experiences';
 import strengthCardData from '../components/UI/StrengthCard/strengthCardData.json';
+import Workflow from '@/components/UI/Workflow';
 
 export default function Home() {
   return (
@@ -46,11 +47,11 @@ export default function Home() {
             </Text>
           </View>
         </View>
-        {/* <View>
+        <View>
           <View paddingTop={50} direction='row' justify='center'>
             <Workflow />
           </View>
-        </View> */}
+        </View>
       </View>
       <View align='center' paddingTop={20} gap={12} direction='column'>
         <View maxWidth='649px'>
