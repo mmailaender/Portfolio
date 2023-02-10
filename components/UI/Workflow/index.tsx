@@ -6,7 +6,7 @@ import workflows from './workflowData.json';
 
 export default function Workflow() {
   return (
-    <View direction='row' gap={12} align='stretch'>
+    <View direction='row' gap={12} align='stretch' justify={'center'}>
       {workflows.map((workflow, index) => (
         <CardWithItems
           cardNumber={index + 1}

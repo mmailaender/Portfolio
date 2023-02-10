@@ -12,7 +12,6 @@ export default function ReactFlowChart({
 }: ReactFlowChartPropType) {
   return (
     <>
-      <View paddingTop={50}>
         {heading && (
           <Text variant='featured-1' className={styles.subText}>
             {heading}
@@ -21,7 +20,7 @@ export default function ReactFlowChart({
 
         <View
           height={155}
-          paddingTop={26.75}
+          paddingTop={10}
           width='100%'
           justify='center'
           align='center'
@@ -46,7 +45,6 @@ export default function ReactFlowChart({
             />
           </View>
         </View>
-      </View>
     </>
   );
 }

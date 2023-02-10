@@ -1,6 +1,6 @@
 'use client';
-import Image from 'next/image';
-import { View, Text } from '../../Reshaped/Reshaped';
+// import Image from 'next/image';
+import { View, Text, Image } from '../../Reshaped/Reshaped';
 import { StrengthCardPropsType } from './types';
 
 export default function StrengthCard({
@@ -11,33 +11,29 @@ export default function StrengthCard({
   description,
 }: StrengthCardPropsType) {
   return (
-    <View paddingBottom={5} paddingEnd={5}>
-      <View
-        width={`${width}px`}
-        backgroundColor='elevated'
-        borderColor='neutral-faded'
-        borderRadius='medium'
-      >
-        <View justify='center' align='center' paddingTop={6} paddingBottom={4}>
-          <Text variant='title-3' color='neutral-faded'>
-            {heading}
-          </Text>
-        </View>
+    <View
+      direction={'column'}
+      justify='center'
+      align='center'
+      padding={5}
+      gap={5}
+      width={width ? (width) : ('100%')}
+      maxWidth={100}
+      backgroundColor='elevated'
+      borderColor='neutral-faded'
+      borderRadius='medium'>
+      <Text variant='title-3' color='neutral-faded'>
+        {heading}
+      </Text>
+      <Image src={icon} height="100%" width="100%" alt={heading} />
 
-        <View paddingBottom={3}>
-          <Image src={icon} height={iconHeight} width={395} alt={heading} />
-        </View>
-
-        {description ? (
-          <View padding={8}>
-            <Text variant='body-medium-1' color='neutral-faded'>
-              {description}
-            </Text>
-          </View>
-        ) : (
-          <View paddingBottom={8} />
-        )}
-      </View>
+      {description ? (
+        <Text align={'center'} variant='body-medium-1' color='neutral-faded'>
+          {description}
+        </Text>
+      ) : (
+        <></>
+      )}
     </View>
   );
 }

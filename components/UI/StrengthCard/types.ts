@@ -1,5 +1,5 @@
 export type StrengthCardPropsType = {
-  width: number;
+  width?: number;
   heading: string;
   icon: string;
   iconHeight: number;

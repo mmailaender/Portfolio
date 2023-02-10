@@ -11,65 +11,52 @@ import { edges } from '@/__mocks__/edges';
 
 export default function Home() {
   return (
-    <View>
-      <View backgroundColor='page'>
-        <View
-          gap={4}
-          direction='row'
-          align='center'
-          justify='center'
-          paddingTop={18}
-        >
-          <Image width={48} height={48} src='./mikeAvatar.svg' alt='emoji' />
-          <Text variant='featured-3' color='neutral-faded'>
-            Mike
+    <View gap={20} padding={5}>
+      <View backgroundColor='page' paddingTop={10} gap={{ s: 20, l: 40 }}>
+        <View align='center'direction='column' gap={3}>
+          <View
+            gap={4}
+            direction='row'
+            align='center'
+            justify='center'
+          >
+            <Image width={48} height={48} src='./mikeAvatar.svg' alt='emoji' />
+            <Text variant='featured-3' color='neutral-faded'>
+              Mike
+            </Text>
+          </View>
+          <Text variant='display-2' align={'center'}>Develop, secure and scale your software.&nbsp;
+            <Text color='primary' as='span'>
+              Be independent
+            </Text>
+          </Text>
+
+          <Text variant='featured-2' color='neutral-faded' align={'center'}>
+            I help you get through the jungle of tools & processes to make software development easy for you.
           </Text>
         </View>
 
-        <View align='center' paddingTop={12} direction='column'>
-          <View>
-            <Text variant='display-2'>
-              <Text>Develop, secure and scale your</Text>
-              <View direction='row' justify='center'>
-                <Text>software.</Text>
-                <Text color='primary' as='span'>
-                  Be independent
-                </Text>
-              </View>
-            </Text>
-          </View>
-
-          <View paddingTop={3}>
-            <Text variant='featured-2' color='neutral-faded'>
-              <Text>
-                I help you get through the jungle of tools & processes to make
-              </Text>
-              <View direction='row' justify='center'>
-                <Text>software development easy for you.</Text>
-              </View>
-            </Text>
-          </View>
-        </View>
-
-        <View paddingTop={50} direction='row' justify='center'>
+        <View direction='row' justify='center'>
           <Workflow />
         </View>
 
-        <ReactFlowChart
-          heading='Best in class JAMstack'
-          edges={edges}
-          nodes={nodes}
-        />
+        <View>
+          <ReactFlowChart
+            heading='Best in class JAMstack'
+            edges={edges}
+            nodes={nodes}
+          />
+        </View>
       </View>
+
       <View
         align='center'
-        paddingTop={20}
         gap={12}
         direction='column'
         backgroundColor='base'
       >
-        <View maxWidth='649px'>
-          <View direction='row' align='center' paddingBottom={12}>
+        <View maxWidth='649px' padding={5}>
+          <View direction='row' align='center' paddingBottom={5}>
             <View paddingEnd={6}>
               <Image
                 width={80}
@@ -108,15 +95,12 @@ export default function Home() {
           <Experiences />
         </View>
 
-        <View align='center' direction='column' paddingTop={18}>
-          <View justify='center' paddingBottom={13}>
-            <Text variant='title-3'>Strengths</Text>
-          </View>
-          <View direction='row' justify='center' paddingBottom={10}>
-            <View>
-              {strengthCardData.map((cardData) => (
-                <StrengthCard
-                  width={395}
+        <View align='center' direction='column' gap={13}>
+          <Text variant='title-3'>Strengths</Text>
+          <View direction='row' justify='center' paddingBottom={10} gap={5}>
+            <View gap={5}>
+              {strengthCardData.map((cardData, index) => (
+                <StrengthCard key={index}
                   heading={cardData.heading}
                   icon={cardData.icon}
                   iconHeight={cardData.iconHeight}
@@ -127,27 +111,24 @@ export default function Home() {
 
             <View>
               <StrengthCard
-                width={395}
                 heading='Knowledge Hunger'
                 icon='/cardKnowledge.svg'
-                iconHeight={589}
+                iconHeight={147}
                 description=''
               />
             </View>
 
-            <View>
+            <View gap={5}>
               <StrengthCard
-                width={395}
                 heading='Performance'
                 icon='/cardPerformance.svg'
-                iconHeight={123}
+                iconHeight={30}
                 description='Being productive gives me immense satisfaction. I’m loving to achieve. Working with the best is activating my full passion.'
               />
               <StrengthCard
-                width={395}
                 heading='Synergies'
                 icon='/cardSynergies.svg'
-                iconHeight={123}
+                iconHeight={30}
                 description='True strength can be only reached by combining people & companies that are seeking the same goals.'
               />
             </View>
