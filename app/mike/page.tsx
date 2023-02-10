@@ -1,5 +1,6 @@
 'use client';
 import CardComponent from '@/components/UI/CardComponent';
+import Experience from '@/components/UI/Experience';
 import Image from 'next/image';
 import { Text, View } from 'reshaped';
 
@@ -58,6 +59,7 @@ export default function Home() {
               {content[1]}
             </Text>
           </View>
+          <Experience />
         </View>
         <CardComponent />
       </View>
