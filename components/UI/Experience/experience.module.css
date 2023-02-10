@@ -1,3 +1,21 @@
 .scrimOverlay {
   background: transparent !important;
 }
+
+.overlay {
+  padding: 40px 0 12px 12px;
+}
+
+.experienceList {
+  animation: experience 1.5s;
+}
+
+@keyframes experience {
+  from {
+    max-height: 143px;
+  }
+
+  to {
+    max-height: 100vh;
+  }
+}

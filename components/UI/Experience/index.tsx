@@ -65,10 +65,14 @@ export default function Experience() {
       <Overlay
         position='bottom'
         fill={!expand}
-        attributes={{ style: { padding: '40px 0 12px 12px' } }}
+        className={styles.overlay}
         scrimClassName={expand && styles.scrimOverlay}
         backgroundSlot={
-          <View maxHeight={expand ? 'auto' : '143px'} overflow='hidden'>
+          <View
+            className={expand && styles.experienceList}
+            maxHeight={expand ? 'auto' : '143px'}
+            overflow='hidden'
+          >
             <AllExperiences />
           </View>
         }
