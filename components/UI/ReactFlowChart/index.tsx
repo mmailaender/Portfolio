@@ -3,7 +3,7 @@ import ReactFlow, { SmoothStepEdge } from 'reactflow';
 import { View, Text } from '../../Reshaped/Reshaped';
 import ChartCard from '../ChartCard';
 import { ReactFlowChartPropType } from './types';
-import styles from './reactFlowChart.module.css';
+import './reactFlowChart.css';
 
 export default function ReactFlowChart({
   heading,
@@ -13,7 +13,7 @@ export default function ReactFlowChart({
   return (
     <>
         {heading && (
-          <Text variant='featured-1' className={styles.subText}>
+          <Text align={'center'} variant='featured-1'>
             {heading}
           </Text>
         )}

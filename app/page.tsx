@@ -11,8 +11,8 @@ import { edges } from '@/__mocks__/edges';
 
 export default function Home() {
   return (
-    <View gap={20} padding={5}>
-      <View backgroundColor='page' paddingTop={10} gap={{ s: 20, l: 40 }}>
+    <View gap={20} backgroundColor='page'>
+      <View padding={5} gap={{ s: 20, l: 40 }} >
         <View align='center'direction='column' gap={3}>
           <View
             gap={4}
@@ -27,7 +27,7 @@ export default function Home() {
           </View>
           <Text variant='display-2' align={'center'}>Develop, secure and scale your software.&nbsp;
             <Text color='primary' as='span'>
-              Be independent
+              Be a creator
             </Text>
           </Text>
 
@@ -52,6 +52,7 @@ export default function Home() {
       <View
         align='center'
         gap={12}
+        padding={5}
         direction='column'
         backgroundColor='base'
       >

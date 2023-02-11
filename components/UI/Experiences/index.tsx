@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button, Overlay, View } from 'reshaped';
-import ArrowDown from '../DownArrow';
+import ArrowDown from '../ArrowDown';
 import ExperincesList from '../ExperiencesList';
 import styles from './experience.module.css';
 

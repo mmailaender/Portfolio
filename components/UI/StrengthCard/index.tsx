@@ -1,5 +1,4 @@
 'use client';
-// import Image from 'next/image';
 import { View, Text, Image } from '../../Reshaped/Reshaped';
 import { StrengthCardPropsType } from './types';
 
