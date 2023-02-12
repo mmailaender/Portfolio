@@ -85,12 +85,6 @@ export default function Home() {
                 themself in order to make a positive impact on our world. He
                 believes that great tech products help support that mission.
               </Text>
-              <br />
-              <Text>
-                He is currently helping Fauna enable thousands of developer to
-                become more easily software creator by simplifying development,
-                security and scaling at backend level.
-              </Text>
             </Text>
           </View>
           <Experiences />
