@@ -11,8 +11,8 @@ import { edges } from '@/__mocks__/edges';
 
 export default function Home() {
   return (
-    <View gap={20} padding={5}>
-      <View backgroundColor='page' paddingTop={10} gap={{ s: 20, l: 40 }}>
+    <View gap={20} backgroundColor='page'>
+      <View padding={5} gap={{ s: 20, l: 40 }} >
         <View align='center'direction='column' gap={3}>
           <View
             gap={4}
@@ -27,7 +27,7 @@ export default function Home() {
           </View>
           <Text variant='display-2' align={'center'}>Develop, secure and scale your software.&nbsp;
             <Text color='primary' as='span'>
-              Be independent
+              Be a creator
             </Text>
           </Text>
 
@@ -52,6 +52,7 @@ export default function Home() {
       <View
         align='center'
         gap={12}
+        padding={5}
         direction='column'
         backgroundColor='base'
       >
@@ -83,12 +84,6 @@ export default function Home() {
                 passionate about helping people become the best version of
                 themself in order to make a positive impact on our world. He
                 believes that great tech products help support that mission.
-              </Text>
-              <br />
-              <Text>
-                He is currently helping Fauna enable thousands of developer to
-                become more easily software creator by simplifying development,
-                security and scaling at backend level.
               </Text>
             </Text>
           </View>
