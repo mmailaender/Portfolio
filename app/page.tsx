@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <View gap={20} backgroundColor='page'>
       <View padding={5} gap={{ s: 20, l: 40 }} >
-        <View align='center'direction='column' gap={3}>
+        <View align='center' direction='column' gap={3}>
           <View
             gap={4}
             direction='row'
@@ -25,12 +25,15 @@ export default function Home() {
               Mike
             </Text>
           </View>
-          <Text variant='display-2' align={'center'}>Develop, secure and scale your software.&nbsp;
-            <Text color='primary' as='span'>
-              Be a creator
-            </Text>
-          </Text>
-
+          <View direction={'row'} justify='center'>
+            <View.Item columns={{ s: 12, xl: 8 }}>
+              <Text variant='display-2' align={'center'}>Develop, secure and scale your software.&nbsp;
+                <Text color='primary' as='span'>
+                  Be a creator
+                </Text>
+              </Text>
+            </View.Item>
+          </View>
           <Text variant='featured-2' color='neutral-faded' align={'center'}>
             I help you get through the jungle of tools & processes to make software development easy for you.
           </Text>
@@ -130,6 +133,6 @@ export default function Home() {
           </View>
         </View>
       </View>
-    </View>
+    </View >
   );
 }
