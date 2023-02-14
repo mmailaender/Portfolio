@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import { Handle, Position, ReactFlowProvider } from 'reactflow';
 import {
@@ -23,6 +24,9 @@ const Icon = ({ children, attributes }: any) => (
 );
 
 export default function ChartCard({ data }: ChartCardPropsType) {
+  const [parentPopoverProps, setParentPopoverProps] = useState<{
+    active?: boolean;
+  }>({});
   const hoverDetails = data.hoverDetails;
 
   return (
@@ -54,7 +58,7 @@ export default function ChartCard({ data }: ChartCardPropsType) {
         />
       </ReactFlowProvider>
 
-      <Popover triggerType='hover'>
+      <Popover triggerType='hover' {...parentPopoverProps}>
         <Popover.Trigger>
           {(attributes) => (
             <Actionable attributes={attributes}>
@@ -92,7 +96,12 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                 >
                   {data.relatedLogos.map((logo, index) => (
                     // TODO: Replace index as iterable
-                    <Popover triggerType='hover' key={index}>
+                    <Popover
+                      triggerType='hover'
+                      key={index}
+                      onOpen={() => setParentPopoverProps({ active: false })}
+                      onClose={() => setParentPopoverProps({})}
+                    >
                       <Popover.Trigger>
                         {(attributes) => (
                           <Actionable attributes={attributes}>
