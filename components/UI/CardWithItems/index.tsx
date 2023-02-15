@@ -8,7 +8,7 @@ type CardWithItemsPropsType = {
   cardNumber: number | string;
   stepTitle: string;
   icon: string;
-  items: { icon: string; title: string }[];
+  items: { icon: string; title: string; id: number | string }[];
 };
 
 export default function CardWithItems({
@@ -71,9 +71,9 @@ export default function CardWithItems({
               className={styles.listItems}
               as='ul'
             >
-              {items.map((item, itemIndex) => (
+              {items.map((item) => (
                 <View
-                  key={itemIndex}
+                  key={item.id}
                   as='li'
                   direction='row'
                   gap={3}

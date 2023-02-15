@@ -1,71 +1,87 @@
 [
   {
+    "id": 1,
     "step": "Understand Customer",
     "icon": "/user.svg",
     "items": [
       {
+        "id": 11,
         "icon": "/search.svg",
         "title": "Research"
       },
       {
+        "id": 12,
         "icon": "/cursor.svg",
         "title": "Interact"
       }
     ]
   },
   {
+    "id": 2,
     "step": "Create Strategy",
     "icon": "/strategy.svg",
     "items": [
       {
+        "id": 21,
         "icon": "/eye.svg",
         "title": "Product Vision"
       },
       {
+        "id": 22,
         "icon": "/path.svg",
         "title": "Product Roadmap"
       },
       {
+        "id": 23,
         "icon": "/synergy.svg",
         "title": "Find Synergies"
       }
     ]
   },
   {
+    "id": 3,
     "step": "Develop Product",
     "icon": "/developProduct.svg",
     "items": [
       {
+        "id": 31,
         "icon": "/eye.svg",
         "title": "Design"
       },
       {
+        "id": 32,
         "icon": "/architecture.svg",
         "title": "Architecture"
       },
       {
+        "id": 33,
         "icon": "/code.svg",
         "title": "Code"
       },
       {
+        "id": 34,
         "icon": "/test.svg",
         "title": "Test"
       },
       {
+        "id": 35,
         "icon": "/equalizer.svg",
         "title": "Operate"
       }
     ]
   },
   {
+    "id": 4,
     "step": "Analyze",
     "icon": "/analyze.svg",
     "items": [
       {
+        "id": 41,
         "icon": "/inspect.svg",
         "title": "Inspect"
       },
       {
+        "id": 42,
         "icon": "/adapt.svg",
         "title": "Adapt"
       }

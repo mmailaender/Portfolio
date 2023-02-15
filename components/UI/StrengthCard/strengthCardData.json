@@ -1,11 +1,13 @@
 [
   {
+    "id": 1,
     "heading": "Visionary",
     "icon": "/cardVisionary.svg",
     "iconHeight": 36,
     "description": "I’m excited to think about the future and create a strategy to reach it."
   },
   {
+    "id": 2,
     "heading": "Focused",
     "icon": "/cardFocused.svg",
     "iconHeight": 26,

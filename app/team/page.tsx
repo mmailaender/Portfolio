@@ -6,11 +6,11 @@ import { edges } from '../../__mocks__/edges';
 import { nodes } from '../../__mocks__/nodes';
 import styles from './page.module.css';
 
-const userAvatars = [
-  '/defaultAvatar.svg',
-  '/defaultAvatar.svg',
-  '/defaultAvatar.svg',
-  '/defaultAvatar.svg',
+const users = [
+  { id: 1, avatar: '/defaultAvatar.svg' },
+  { id: 1, avatar: '/defaultAvatar.svg' },
+  { id: 1, avatar: '/defaultAvatar.svg' },
+  { id: 1, avatar: '/defaultAvatar.svg' },
 ];
 
 export default function Home() {
@@ -32,8 +32,8 @@ export default function Home() {
         borderColor='neutral-faded'
         className={styles.userAvatar}
       >
-        {userAvatars.map((avatar) => (
-          <Avatar src={avatar} size={16} />
+        {users.map((user) => (
+          <Avatar key={user.id} src={user.avatar} size={16} />
         ))}
       </View>
       <ReactFlowChart

@@ -94,11 +94,10 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                   direction='row'
                   align={'center'}
                 >
-                  {data.relatedLogos.map((logo, index) => (
-                    // TODO: Replace index as iterable
+                  {data.relatedLogos.map((logo) => (
                     <Popover
                       triggerType='hover'
-                      key={index}
+                      key={logo.id}
                       onOpen={() => setParentPopoverProps({ active: false })}
                       onClose={() => setParentPopoverProps({})}
                     >
@@ -160,9 +159,8 @@ export default function ChartCard({ data }: ChartCardPropsType) {
             </View>
             <View>
               <Timeline>
-                {hoverDetails.items.map((item, index) => (
-                  // TODO: Replace index as iterable
-                  <Timeline.Item key={index}>
+                {hoverDetails.items.map((item) => (
+                  <Timeline.Item key={item.id}>
                     <View
                       direction='row'
                       align={'center'}

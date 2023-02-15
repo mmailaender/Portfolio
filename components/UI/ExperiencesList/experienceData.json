@@ -1,43 +1,50 @@
-[{
+[
+  {
+    "id": 1,
     "role": "Personal Coach",
     "company": null,
     "workingPeriod": "Jan 2022 - Present",
     "description": "Training continuously interpersonal skills. Part-time personal coaching to help others and get to know more personalities.",
     "descriptionInItalicFont": null
-},
-{
-  "role": "CEO & Co-Founder",
-  "company":"Dechea",
-  "workingPeriod": "Aug 2020 - Present",
-  "description": "Driving the product strategy, creating the architecture & toolchain and mentoring the team to become better developers.",
-  "descriptionInItalicFont": "“A medical software that helps people around the world to get the best treatment based on their circumstances.“"
-},
-{
-  "role": "Project Lead",
-  "company":"BMW",
-  "workingPeriod": "Jan 2019 - Jul 2020",
-  "description": "Leading and coaching an agile team of 15 people. Ensuring the quality of the product outcome. Executing an IT product with a yearly budget of 2.5 million euros.",
-  "descriptionInItalicFont": null
-},
-{
-  "role": "Project Lead Assistant",
-  "company":"BMW",
-  "workingPeriod": "Apr 2017 - Dec 2018",
-  "description": "Assist in  leading and coaching an agile team of 15 people. Ensuring the quality of the product outcome.",
-  "descriptionInItalicFont": null
-},
-{
-  "role": "Software Developer",
-  "company":"BMW",
-  "workingPeriod": "Sep 2016 - Mar 2017",
-  "description": "Developing a continuous delivery toolchain, creating automated tests, providing training documentation, serving customer requests",
-  "descriptionInItalicFont": null
-},
-{
-  "role": "IT Specialist Apprenticeship",
-  "company":"doubleSlash",
-  "workingPeriod": "Sep 2013 - Aug 2016",
-  "description": null,
-  "descriptionInItalicFont": null
-}
+  },
+  {
+    "id": 2,
+    "role": "CEO & Co-Founder",
+    "company": "Dechea",
+    "workingPeriod": "Aug 2020 - Present",
+    "description": "Driving the product strategy, creating the architecture & toolchain and mentoring the team to become better developers.",
+    "descriptionInItalicFont": "“A medical software that helps people around the world to get the best treatment based on their circumstances.“"
+  },
+  {
+    "id": 3,
+    "role": "Project Lead",
+    "company": "BMW",
+    "workingPeriod": "Jan 2019 - Jul 2020",
+    "description": "Leading and coaching an agile team of 15 people. Ensuring the quality of the product outcome. Executing an IT product with a yearly budget of 2.5 million euros.",
+    "descriptionInItalicFont": null
+  },
+  {
+    "id": 4,
+    "role": "Project Lead Assistant",
+    "company": "BMW",
+    "workingPeriod": "Apr 2017 - Dec 2018",
+    "description": "Assist in  leading and coaching an agile team of 15 people. Ensuring the quality of the product outcome.",
+    "descriptionInItalicFont": null
+  },
+  {
+    "id": 5,
+    "role": "Software Developer",
+    "company": "BMW",
+    "workingPeriod": "Sep 2016 - Mar 2017",
+    "description": "Developing a continuous delivery toolchain, creating automated tests, providing training documentation, serving customer requests",
+    "descriptionInItalicFont": null
+  },
+  {
+    "id": 6,
+    "role": "IT Specialist Apprenticeship",
+    "company": "doubleSlash",
+    "workingPeriod": "Sep 2013 - Aug 2016",
+    "description": null,
+    "descriptionInItalicFont": null
+  }
 ]
