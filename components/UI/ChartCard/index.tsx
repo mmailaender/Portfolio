@@ -58,10 +58,10 @@ export default function ChartCard({ data }: ChartCardPropsType) {
         />
       </ReactFlowProvider>
 
-      <Popover triggerType='hover' {...parentPopoverProps}>
-        <Popover.Trigger>
-          {(attributes) => (
-            <Actionable attributes={attributes}>
+      {/* <Popover triggerType='hover' {...parentPopoverProps}>
+        <Popover.Trigger> */}
+          {/* {(attributes) => (
+            <Actionable attributes={attributes}> */}
               <View
                 backgroundColor='page'
                 borderColor='neutral-faded'
@@ -146,11 +146,11 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                   ))}
                 </View>
               </View>
-            </Actionable>
-          )}
-        </Popover.Trigger>
+            {/* </Actionable>
+          )} */}
+        {/* </Popover.Trigger> */}
 
-        <Popover.Content>
+        {/* <Popover.Content>
           <View width='282px'>
             <View paddingBottom={3}>
               <Text color='primary' variant='body-strong-2'>
@@ -217,8 +217,8 @@ export default function ChartCard({ data }: ChartCardPropsType) {
               </Timeline>
             </View>
           </View>
-        </Popover.Content>
-      </Popover>
+        </Popover.Content> */}
+      {/* </Popover> */}
     </div>
   );
 }

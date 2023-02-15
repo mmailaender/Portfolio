@@ -123,10 +123,10 @@ export const nodes = [
         {
           id: 21,
           logo: '/gqty.svg',
-          category: 'GRAPH QL',
+          category: 'GRAPHQL',
           title: 'Gqty',
 
-          description: 'Gqty A GraphQL client built for rapid iteration.',
+          description: 'A GraphQL client built for rapid iteration.',
         },
         {
           id: 22,
@@ -142,7 +142,7 @@ export const nodes = [
           title: 'Clerk',
           category: 'AUTH',
           description:
-            'Clerk is authentication platform, helps to integrate complete user management UIs and APIs, purpose-built for React, Next.js, and the Modern Web.',
+            'Clerk is authentication platform, helps to integrate complete user management UIs and APIs.',
         },
         {
           id: 24,
@@ -162,7 +162,7 @@ export const nodes = [
         },
       ],
       hoverDetails: {
-        title: 'GRAPH Ql | FQL | AUTH | SECRETS | DAST',
+        title: 'GRAPHQL | FQL | AUTH | SECRETS | DAST',
         items: [
           {
             id: 21,
