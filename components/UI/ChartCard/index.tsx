@@ -126,21 +126,20 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                           <View>
                             <View direction='row' align={'center'} gap={2}>
                               <Image
-                                src='/fauna.svg'
+                                src={logo.logo}
                                 height={32}
                                 width={32}
-                                alt='Fauna'
+                                alt={logo.title}
                               />
                               <View>
-                                <Text variant='body-strong-1'>Fauna</Text>
+                                <Text variant='body-strong-1'>
+                                  {logo.title}
+                                </Text>
                               </View>
                             </View>
                           </View>
                           <View paddingTop={3}>
-                            <Text variant='caption-1'>
-                              Lorem Ipsum is simply dummy text of the printing
-                              and typesetting industry.
-                            </Text>
+                            <Text variant='caption-1'>{logo.description}</Text>
                           </View>
                         </View>
                       </Popover.Content>
