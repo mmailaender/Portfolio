@@ -1,6 +1,7 @@
 type RelatedLogos = {
   id: number | string;
   logo: string;
+  category: string;
   title: string;
   description: string;
 };

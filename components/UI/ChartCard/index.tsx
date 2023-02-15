@@ -67,7 +67,7 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                 borderColor='neutral-faded'
                 borderRadius={'medium'}
                 direction='column'
-                width='325px'
+                attributes={{ style: { minWidth: '325px' } }}
                 padding={4}
                 className={styles.detailContainer}
               >
@@ -118,7 +118,7 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                       <Popover.Content>
                         <View paddingBottom={3}>
                           <Text color='primary' variant='body-strong-2'>
-                            DATABASE
+                            {logo.category}
                           </Text>
                         </View>
                         <View width='250px'>
