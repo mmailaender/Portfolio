@@ -58,16 +58,16 @@ export default function ChartCard({ data }: ChartCardPropsType) {
         />
       </ReactFlowProvider>
 
-      <Popover triggerType='hover' {...parentPopoverProps}>
-        <Popover.Trigger>
-          {(attributes) => (
-            <Actionable attributes={attributes}>
+      {/* <Popover triggerType='hover' {...parentPopoverProps}>
+        <Popover.Trigger> */}
+          {/* {(attributes) => (
+            <Actionable attributes={attributes}> */}
               <View
                 backgroundColor='page'
                 borderColor='neutral-faded'
                 borderRadius={'medium'}
                 direction='column'
-                width='325px'
+                attributes={{ style: { minWidth: '325px' } }}
                 padding={4}
                 className={styles.detailContainer}
               >
@@ -118,7 +118,7 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                       <Popover.Content>
                         <View paddingBottom={3}>
                           <Text color='primary' variant='body-strong-2'>
-                            DATABASE
+                            {logo.category}
                           </Text>
                         </View>
                         <View width='250px'>
@@ -146,11 +146,11 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                   ))}
                 </View>
               </View>
-            </Actionable>
-          )}
-        </Popover.Trigger>
+            {/* </Actionable>
+          )} */}
+        {/* </Popover.Trigger> */}
 
-        <Popover.Content>
+        {/* <Popover.Content>
           <View width='282px'>
             <View paddingBottom={3}>
               <Text color='primary' variant='body-strong-2'>
@@ -217,8 +217,8 @@ export default function ChartCard({ data }: ChartCardPropsType) {
               </Timeline>
             </View>
           </View>
-        </Popover.Content>
-      </Popover>
+        </Popover.Content> */}
+      {/* </Popover> */}
     </div>
   );
 }
