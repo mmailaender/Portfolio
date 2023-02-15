@@ -12,14 +12,9 @@ import { edges } from '@/__mocks__/edges';
 export default function Home() {
   return (
     <View gap={20} backgroundColor='page'>
-      <View padding={5} gap={{ s: 20, l: 40 }} >
+      <View padding={5} gap={{ s: 20, l: 40 }}>
         <View align='center' direction='column' gap={3}>
-          <View
-            gap={4}
-            direction='row'
-            align='center'
-            justify='center'
-          >
+          <View gap={4} direction='row' align='center' justify='center'>
             <Image width={48} height={48} src='./mikeAvatar.svg' alt='emoji' />
             <Text variant='featured-3' color='neutral-faded'>
               Mike
@@ -27,7 +22,8 @@ export default function Home() {
           </View>
           <View direction={'row'} justify='center'>
             <View.Item columns={{ s: 12, xl: 8 }}>
-              <Text variant='display-2' align={'center'}>Develop, secure and scale your software.&nbsp;
+              <Text variant='display-2' align={'center'}>
+                Develop, secure and scale your software.&nbsp;
                 <Text color='primary' as='span'>
                   Be a creator
                 </Text>
@@ -35,7 +31,8 @@ export default function Home() {
             </View.Item>
           </View>
           <Text variant='featured-2' color='neutral-faded' align={'center'}>
-            I help you get through the jungle of tools & processes to make software development easy for you.
+            I help you get through the jungle of tools & processes to make
+            software development easy for you.
           </Text>
         </View>
 
@@ -98,7 +95,8 @@ export default function Home() {
           <View direction='row' justify='center' paddingBottom={10} gap={5}>
             <View gap={5}>
               {strengthCardData.map((cardData, index) => (
-                <StrengthCard key={index}
+                <StrengthCard
+                  key={cardData.id}
                   heading={cardData.heading}
                   icon={cardData.icon}
                   iconHeight={cardData.iconHeight}
@@ -133,6 +131,6 @@ export default function Home() {
           </View>
         </View>
       </View>
-    </View >
+    </View>
   );
 }

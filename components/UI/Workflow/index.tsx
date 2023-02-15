@@ -13,7 +13,7 @@ export default function Workflow() {
           icon={workflow.icon}
           items={workflow.items}
           stepTitle={workflow.step}
-          key={index}
+          key={workflow.id}
         />
       ))}
     </View>
