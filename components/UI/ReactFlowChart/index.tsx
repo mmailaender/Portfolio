@@ -19,7 +19,7 @@ export default function ReactFlowChart({
       )}
 
       <View
-        height={155}
+        height={175}
         paddingTop={10}
         direction='row'
         justify='center'

@@ -1,7 +1,6 @@
 'use client';
 
-import Image from 'next/image';
-import { Card, Text, View } from 'reshaped';
+import { Card, Text, View, Image } from 'reshaped';
 import styles from './cardWithItems.module.css';
 
 type CardWithItemsPropsType = {
@@ -21,9 +20,10 @@ export default function CardWithItems({
     <>
       <View
         direction='column'
-        gap={12}
-        paddingTop={12}
-        paddingBottom={3}
+        padding={3}
+        // gap={12}
+        // paddingTop={12}
+        // paddingBottom={3}
         backgroundColor='base'
         borderColor='neutral-faded'
         borderRadius='large'
@@ -41,59 +41,78 @@ export default function CardWithItems({
             {cardNumber}
           </Text>
         </View>
-        <View paddingStart={3} paddingEnd={3}>
-          <Text variant='title-2' align='center'>
-            {stepTitle}
-          </Text>
+        <View>
+          <View direction='column'>
+            <View.Item gapBefore={9}>
+              <Text variant='title-2' align='center'>
+                {stepTitle}
+              </Text>
+            </View.Item>
+          </View>
+        </View>
+        <View>
+          <View direction='column'>
+            <View.Item gapBefore={3}>
+              <View direction='row' justify='center' align='center'>
+                <View>
+                  <Image
+                    src={icon}
+                    alt='Customers'
+                    height='100%'
+                    width='100%'
+                  />
+                </View>
+              </View>
+            </View.Item>
+          </View>
         </View>
         <View
-          paddingTop={4}
-          paddingBottom={4}
-          direction='row'
-          justify='center'
-          align='center'
-        >
-          <Image src={icon} alt='Customers' height={172} width={197} />
-        </View>
-        <View
-          paddingStart={3}
-          paddingEnd={3}
-          borderRadius='medium'
-          direction='row'
-          align='end'
+          direction='column'
+          align='stretch'
+          justify='end'
           width='100%'
           height='100%'
         >
-          <Card padding={0} className={styles.itemsCard}>
+          <View.Item gapBefore={3}>
             <View
-              direction='column'
-              justify='end'
-              className={styles.listItems}
-              as='ul'
+              borderRadius='medium'
+              direction='row'
+              align='end'
+              width='100%'
+              height='100%'
             >
-              {items.map((item) => (
+              <Card padding={0}>
                 <View
-                  key={item.id}
-                  as='li'
-                  direction='row'
-                  gap={3}
-                  paddingTop={3}
-                  paddingBottom={3}
-                  paddingEnd={4}
-                  paddingStart={4}
-                  backgroundColor='neutral'
+                  direction='column'
+                  justify='end'
+                  gap={0.2}
+                  width='100%'
+                  height='100%'
+                  // align='stretch'
                 >
-                  <Image
-                    src={item.icon}
-                    height={20}
-                    width={20}
-                    alt={item.title}
-                  />
-                  <Text variant='body-strong-2'>{item.title}</Text>
+                  {items.map((item) => (
+                    <View
+                      key={item.id}
+                      direction='row'
+                      gap={3}
+                      padding={3}
+                      backgroundColor='neutral'
+                    >
+                      <View>
+                        <Image
+                          src={item.icon}
+                          alt={item.title}
+                          height='100%'
+                          width='100%'
+                        />
+                      </View>
+                      <Text variant='body-strong-2'>{item.title}</Text>
+                    </View>
+                  ))}
                 </View>
-              ))}
+              </Card>
             </View>
-          </Card>
+          </View.Item>
         </View>
       </View>
     </>

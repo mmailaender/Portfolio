@@ -1,13 +1,13 @@
 'use client';
-import { useState } from 'react';
-import Image from 'next/image';
+// import { useState } from 'react';
 import { Handle, Position, ReactFlowProvider } from 'reactflow';
 import {
   View,
   Text,
   Popover,
-  Timeline,
+  // Timeline,
   Actionable,
+  Image,
 } from '../../Reshaped/Reshaped';
 import { ChartCardPropsType } from './types';
 import styles from './chartCard.module.css';
@@ -24,10 +24,10 @@ const Icon = ({ children, attributes }: any) => (
 );
 
 export default function ChartCard({ data }: ChartCardPropsType) {
-  const [parentPopoverProps, setParentPopoverProps] = useState<{
-    active?: boolean;
-  }>({});
-  const hoverDetails = data.hoverDetails;
+  // const [parentPopoverProps, setParentPopoverProps] = useState<{
+  //   active?: boolean;
+  // }>({});
+  // const hoverDetails = data.hoverDetails;
 
   return (
     <div>
@@ -60,97 +60,101 @@ export default function ChartCard({ data }: ChartCardPropsType) {
 
       {/* <Popover triggerType='hover' {...parentPopoverProps}>
         <Popover.Trigger> */}
-          {/* {(attributes) => (
+      {/* {(attributes) => (
             <Actionable attributes={attributes}> */}
-              <View
-                backgroundColor='page'
-                borderColor='neutral-faded'
-                borderRadius={'medium'}
-                direction='column'
-                attributes={{ style: { minWidth: '325px' } }}
-                padding={4}
-                className={styles.detailContainer}
-              >
-                <View direction='row' align='center' gap={4}>
-                  <Image
-                    src={data.logo}
-                    height={48}
-                    width={48}
-                    alt={data.toolName}
-                  />
+      <View
+        backgroundColor='page'
+        borderColor='neutral-faded'
+        borderRadius={'medium'}
+        direction='column'
+        attributes={{ style: { minWidth: '325px' } }}
+        padding={4}
+        className={styles.detailContainer}
+      >
+        <View direction='row' align='center' gap={4}>
+          <View width={{ s: '48px' }}>
+            <Image
+              src={data.logo}
+              height='100%'
+              width='100%'
+              alt={data.toolName}
+            />
+          </View>
+          <View direction='column'>
+            <Text color='primary' variant='caption-2'>
+              {data.toolType}
+            </Text>
+            <Text>{data.toolName}</Text>
+          </View>
+        </View>
+        <View
+          paddingTop={3}
+          paddingStart={15}
+          paddingEnd={10}
+          gap={2}
+          direction='row'
+          align={'center'}
+        >
+          {data.relatedLogos.map((logo) => (
+            <Popover
+              triggerType='hover'
+              key={logo.id}
+              // onOpen={() => setParentPopoverProps({ active: false })}
+              // onClose={() => setParentPopoverProps({})}
+            >
+              <Popover.Trigger>
+                {(attributes) => (
+                  <Actionable attributes={attributes}>
+                    <Icon attributes={attributes}>
+                      <View width={{ s: '20px' }}>
+                        <Image
+                          src={logo.logo}
+                          height='100%'
+                          width='100%'
+                          alt={logo.title}
+                        />
+                      </View>
+                    </Icon>
+                  </Actionable>
+                )}
+              </Popover.Trigger>
+              <Popover.Content>
+                <View paddingBottom={3}>
+                  <Text color='primary' variant='body-strong-2'>
+                    {logo.category}
+                  </Text>
+                </View>
+                <View width='250px'>
+                  <View>
+                    <View direction='row' align={'center'} gap={2}>
+                      <View width={{ s: '32px' }}>
+                        <Image
+                          src={logo.logo}
+                          height='100%'
+                          width='100%'
+                          alt={logo.title}
+                        />
+                      </View>
 
-                  <View direction='column'>
-                    <Text color='primary' variant='caption-2'>
-                      {data.toolType}
-                    </Text>
-                    <Text>{data.toolName}</Text>
+                      <View>
+                        <Text variant='body-strong-1'>{logo.title}</Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View paddingTop={3}>
+                    <Text variant='caption-1'>{logo.description}</Text>
                   </View>
                 </View>
-                <View
-                  paddingTop={3}
-                  paddingStart={15}
-                  paddingEnd={10}
-                  gap={2}
-                  direction='row'
-                  align={'center'}
-                >
-                  {data.relatedLogos.map((logo) => (
-                    <Popover
-                      triggerType='hover'
-                      key={logo.id}
-                      onOpen={() => setParentPopoverProps({ active: false })}
-                      onClose={() => setParentPopoverProps({})}
-                    >
-                      <Popover.Trigger>
-                        {(attributes) => (
-                          <Actionable attributes={attributes}>
-                            <Icon attributes={attributes}>
-                              <Image
-                                src={logo.logo}
-                                height={20}
-                                width={20}
-                                alt={logo.title}
-                              />
-                            </Icon>
-                          </Actionable>
-                        )}
-                      </Popover.Trigger>
-                      <Popover.Content>
-                        <View paddingBottom={3}>
-                          <Text color='primary' variant='body-strong-2'>
-                            {logo.category}
-                          </Text>
-                        </View>
-                        <View width='250px'>
-                          <View>
-                            <View direction='row' align={'center'} gap={2}>
-                              <Image
-                                src={logo.logo}
-                                height={32}
-                                width={32}
-                                alt={logo.title}
-                              />
-                              <View>
-                                <Text variant='body-strong-1'>
-                                  {logo.title}
-                                </Text>
-                              </View>
-                            </View>
-                          </View>
-                          <View paddingTop={3}>
-                            <Text variant='caption-1'>{logo.description}</Text>
-                          </View>
-                        </View>
-                      </Popover.Content>
-                    </Popover>
-                  ))}
-                </View>
-              </View>
-            {/* </Actionable>
+              </Popover.Content>
+            </Popover>
+          ))}
+        </View>
+      </View>
+      {/* </Actionable>
           )} */}
-        {/* </Popover.Trigger> */}
+      {/* </Popover.Trigger> */}
 
-        {/* <Popover.Content>
+      {/* <Popover.Content>
           <View width='282px'>
             <View paddingBottom={3}>
               <Text color='primary' variant='body-strong-2'>
@@ -175,12 +179,15 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                           gap={2}
                           paddingStart={0}
                         >
-                          <Image
-                            src={item.logo}
-                            height={28}
-                            width={25}
-                            alt={item.title}
-                          />
+                          <View>
+                            4
+                            <Image
+                              src={item.logo}
+                              height='100%'
+                              width='100%'
+                              alt={item.title}
+                            />
+                          </View>
                           <View>
                             <Text variant='body-strong-1'>{item.title}</Text>
                           </View>{' '}
@@ -195,13 +202,15 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                           paddingStart={0}
                           gap={2}
                         >
-                          <Image
-                            src='/star.svg'
-                            height={16}
-                            width={16}
-                            alt='Star'
-                          />
-
+                          <View>
+                            5
+                            <Image
+                              src='/star.svg'
+                              height='100%'
+                              width='100%'
+                              alt='Star'
+                            />
+                          </View>
                           <Text variant='body-2'>{item.ranking}</Text>
                         </View>
                       </View.Item>

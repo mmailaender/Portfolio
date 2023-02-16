@@ -1,6 +1,5 @@
 'use client';
-import Image from 'next/image';
-import { Text, View } from 'reshaped';
+import { Text, View, Image } from 'reshaped';
 import StrengthCard from '@/components/UI/StrengthCard';
 import Experiences from '@/components/UI/Experiences';
 import strengthCardData from '../components/UI/StrengthCard/strengthCardData.json';
@@ -14,12 +13,28 @@ export default function Home() {
     <View gap={20} backgroundColor='page'>
       <View padding={5} gap={{ s: 20, l: 40 }}>
         <View align='center' direction='column' gap={3}>
-          <View gap={4} direction='row' align='center' justify='center'>
-            <Image width={48} height={48} src='./mikeAvatar.svg' alt='emoji' />
-            <Text variant='featured-3' color='neutral-faded'>
-              Mike
-            </Text>
+          <View
+            gap={4}
+            direction='row'
+            align='center'
+            justify='center'
+            padding={5}
+          >
+            <View width='48px'>
+              <Image
+                src='./mikeAvatar.svg'
+                height='100%'
+                width='100%'
+                alt='Mike'
+              />
+            </View>
+            <View>
+              <Text variant='featured-3' color='neutral-faded'>
+                Mike
+              </Text>
+            </View>
           </View>
+
           <View direction={'row'} justify='center'>
             <View.Item columns={{ s: 12, xl: 8 }}>
               <Text variant='display-2' align={'center'}>
@@ -56,26 +71,28 @@ export default function Home() {
         direction='column'
         backgroundColor='base'
       >
-        <View maxWidth='649px' padding={5}>
-          <View direction='row' align='center' paddingBottom={5}>
-            <View paddingEnd={6}>
-              <Image
-                width={80}
-                height={80}
-                src='./mikeAvatar.svg'
-                alt='emoji'
-              />
-            </View>
+        <View maxWidth='649px' direction='column' gap={5}>
+          <View.Item gapBefore={21}>
+            <View direction='row' align='center' gap={6}>
+              <View>
+                <Image
+                  width='100%'
+                  height='100%'
+                  src='./mikeAvatar.svg'
+                  alt='MIke'
+                />
+              </View>
 
-            <View.Item>
-              <Text variant='title-3' color='neutral'>
-                Mike
-              </Text>
-              <Text variant='body-medium-1' color='neutral-faded'>
-                CEO & Co-Founder, Personal Coach
-              </Text>
-            </View.Item>
-          </View>
+              <View>
+                <Text variant='title-3' color='neutral'>
+                  Mike
+                </Text>
+                <Text variant='body-medium-1' color='neutral-faded'>
+                  CEO & Co-Founder, Personal Coach
+                </Text>
+              </View>
+            </View>
+          </View.Item>
 
           <View>
             <Text variant='body-medium-1' color='neutral'>
@@ -86,8 +103,8 @@ export default function Home() {
                 believes that great tech products help support that mission.
               </Text>
             </Text>
+            <Experiences />
           </View>
-          <Experiences />
         </View>
 
         <View align='center' direction='column' gap={13}>
