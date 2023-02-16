@@ -27,7 +27,7 @@ export default function Experiences() {
         }
       >
         {!expand && (
-          <View paddingTop={10} justify='center' direction='row'>
+          <View justify='center' direction='row'>
             <Button onClick={() => setExpand(!expand)} endIcon={<ArrowDown />}>
               Experience
             </Button>

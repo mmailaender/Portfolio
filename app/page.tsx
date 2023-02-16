@@ -28,11 +28,10 @@ export default function Home() {
                 alt='Mike'
               />
             </View>
-            <View>
-              <Text variant='featured-3' color='neutral-faded'>
-                Mike
-              </Text>
-            </View>
+
+            <Text variant='featured-3' color='neutral-faded'>
+              Mike
+            </Text>
           </View>
 
           <View direction={'row'} justify='center'>
@@ -45,6 +44,7 @@ export default function Home() {
               </Text>
             </View.Item>
           </View>
+
           <Text variant='featured-2' color='neutral-faded' align={'center'}>
             I help you get through the jungle of tools & processes to make
             software development easy for you.
@@ -71,7 +71,11 @@ export default function Home() {
         direction='column'
         backgroundColor='base'
       >
-        <View maxWidth='649px' direction='column' gap={5}>
+        <View
+          width={{ s: '649px', m: '649px', l: '649px', xl: '649px' }}
+          direction='column'
+          gap={5}
+        >
           <View.Item gapBefore={21}>
             <View direction='row' align='center' gap={6}>
               <View>
@@ -79,7 +83,7 @@ export default function Home() {
                   width='100%'
                   height='100%'
                   src='./mikeAvatar.svg'
-                  alt='MIke'
+                  alt='Mike'
                 />
               </View>
 
@@ -94,24 +98,21 @@ export default function Home() {
             </View>
           </View.Item>
 
-          <View>
-            <Text variant='body-medium-1' color='neutral'>
-              <Text>
-                Creator, mentor, tech-lover and philanthropist. Mike is
-                passionate about helping people become the best version of
-                themself in order to make a positive impact on our world. He
-                believes that great tech products help support that mission.
-              </Text>
-            </Text>
-            <Experiences />
-          </View>
+          <Text variant='body-medium-1' color='neutral'>
+            Creator, mentor, tech-lover and philanthropist. Mike is passionate
+            about helping people become the best version of themself in order to
+            make a positive impact on our world. He believes that great tech
+            products help support that mission.
+          </Text>
+
+          <Experiences />
         </View>
 
         <View align='center' direction='column' gap={13}>
           <Text variant='title-3'>Strengths</Text>
-          <View direction='row' justify='center' paddingBottom={10} gap={5}>
+          <View direction='row' justify='center' gap={5}>
             <View gap={5}>
-              {strengthCardData.map((cardData, index) => (
+              {strengthCardData.map((cardData) => (
                 <StrengthCard
                   key={cardData.id}
                   heading={cardData.heading}
@@ -136,7 +137,7 @@ export default function Home() {
                 heading='Performance'
                 icon='/cardPerformance.svg'
                 iconHeight={30}
-                description='Being productive gives me immense satisfaction. I’m loving to achieve. Working with the best is activating my full passion.'
+                description="Being productive gives me immense satisfaction. I'm loving to achieve. Working with the best is activating my full passion."
               />
               <StrengthCard
                 heading='Synergies'
@@ -146,6 +147,7 @@ export default function Home() {
               />
             </View>
           </View>
+          <View />
         </View>
       </View>
     </View>

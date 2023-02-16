@@ -16,15 +16,16 @@ export default function StrengthCard({
       align='center'
       padding={5}
       gap={5}
-      width={width ? (width) : ('100%')}
+      width={width ? width : '100%'}
       maxWidth={100}
       backgroundColor='elevated'
       borderColor='neutral-faded'
-      borderRadius='medium'>
+      borderRadius='medium'
+    >
       <Text variant='title-3' color='neutral-faded'>
         {heading}
       </Text>
-      <Image src={icon} height="100%" width="100%" alt={heading} />
+      <Image src={icon} height='100%' width='100%' alt={heading} />
 
       {description ? (
         <Text align={'center'} variant='body-medium-1' color='neutral-faded'>

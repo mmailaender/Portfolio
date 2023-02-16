@@ -11,7 +11,7 @@ export default function ReactFlowChart({
   edges,
 }: ReactFlowChartPropType) {
   return (
-    <>
+    <View gap={10}>
       {heading && (
         <Text align={'center'} variant='featured-1'>
           {heading}
@@ -19,11 +19,10 @@ export default function ReactFlowChart({
       )}
 
       <View
-        height={175}
-        paddingTop={10}
         direction='row'
         justify='center'
         align='center'
+        height={{ s: 80, m: 120, l: 130, xl: 175 }}
       >
         <ReactFlow
           nodes={nodes}
@@ -44,6 +43,6 @@ export default function ReactFlowChart({
           proOptions={{ hideAttribution: true }}
         />
       </View>
-    </>
+    </View>
   );
 }

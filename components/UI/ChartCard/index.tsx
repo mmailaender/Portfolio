@@ -66,88 +66,82 @@ export default function ChartCard({ data }: ChartCardPropsType) {
         backgroundColor='page'
         borderColor='neutral-faded'
         borderRadius={'medium'}
-        direction='column'
+        direction='row'
         attributes={{ style: { minWidth: '325px' } }}
         padding={4}
         className={styles.detailContainer}
+        gap={4}
       >
-        <View direction='row' align='center' gap={4}>
-          <View width={{ s: '48px' }}>
-            <Image
-              src={data.logo}
-              height='100%'
-              width='100%'
-              alt={data.toolName}
-            />
-          </View>
+        <View direction='column' align='start' width={{ s: '48px' }}>
+          <Image
+            src={data.logo}
+            height='100%'
+            width='100%'
+            alt={data.toolName}
+          />
+        </View>
+
+        <View gap={6} direction='column' align='start'>
           <View direction='column'>
             <Text color='primary' variant='caption-2'>
               {data.toolType}
             </Text>
             <Text>{data.toolName}</Text>
           </View>
-        </View>
-        <View
-          paddingTop={3}
-          paddingStart={15}
-          paddingEnd={10}
-          gap={2}
-          direction='row'
-          align={'center'}
-        >
-          {data.relatedLogos.map((logo) => (
-            <Popover
-              triggerType='hover'
-              key={logo.id}
-              // onOpen={() => setParentPopoverProps({ active: false })}
-              // onClose={() => setParentPopoverProps({})}
-            >
-              <Popover.Trigger>
-                {(attributes) => (
-                  <Actionable attributes={attributes}>
-                    <Icon attributes={attributes}>
-                      <View width={{ s: '20px' }}>
-                        <Image
-                          src={logo.logo}
-                          height='100%'
-                          width='100%'
-                          alt={logo.title}
-                        />
-                      </View>
-                    </Icon>
-                  </Actionable>
-                )}
-              </Popover.Trigger>
-              <Popover.Content>
-                <View paddingBottom={3}>
-                  <Text color='primary' variant='body-strong-2'>
-                    {logo.category}
-                  </Text>
-                </View>
-                <View width='250px'>
-                  <View>
-                    <View direction='row' align={'center'} gap={2}>
-                      <View width={{ s: '32px' }}>
-                        <Image
-                          src={logo.logo}
-                          height='100%'
-                          width='100%'
-                          alt={logo.title}
-                        />
-                      </View>
 
-                      <View>
+          <View direction='row' gap={2}>
+            {data.relatedLogos.map((logo) => (
+              <Popover
+                triggerType='hover'
+                key={logo.id}
+                // onOpen={() => setParentPopoverProps({ active: false })}
+                // onClose={() => setParentPopoverProps({})}
+              >
+                <Popover.Trigger>
+                  {(attributes) => (
+                    <Actionable attributes={attributes}>
+                      <Icon attributes={attributes}>
+                        <View width={{ s: '20px' }}>
+                          <Image
+                            src={logo.logo}
+                            height='100%'
+                            width='100%'
+                            alt={logo.title}
+                          />
+                        </View>
+                      </Icon>
+                    </Actionable>
+                  )}
+                </Popover.Trigger>
+                <Popover.Content>
+                  <View gap={3}>
+                    <View>
+                      <Text color='primary' variant='body-strong-2'>
+                        {logo.category}
+                      </Text>
+                    </View>
+
+                    <View width='250px' gap={3}>
+                      <View direction='row' align={'center'} gap={2}>
+                        <View width={{ s: '32px' }}>
+                          <Image
+                            src={logo.logo}
+                            height='100%'
+                            width='100%'
+                            alt={logo.title}
+                          />
+                        </View>
+
                         <Text variant='body-strong-1'>{logo.title}</Text>
                       </View>
                     </View>
-                  </View>
-                  <View paddingTop={3}>
+
                     <Text variant='caption-1'>{logo.description}</Text>
                   </View>
-                </View>
-              </Popover.Content>
-            </Popover>
-          ))}
+                </Popover.Content>
+              </Popover>
+            ))}
+          </View>
         </View>
       </View>
       {/* </Actionable>
