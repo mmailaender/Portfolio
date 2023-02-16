@@ -1,7 +1,6 @@
 'use client';
 
 import { Card, Text, View, Image } from 'reshaped';
-import styles from './cardWithItems.module.css';
 
 type CardWithItemsPropsType = {
   cardNumber: number | string;
@@ -21,21 +20,29 @@ export default function CardWithItems({
       <View
         direction='column'
         padding={3}
-        // gap={12}
-        // paddingTop={12}
-        // paddingBottom={3}
+        gap={12}
         backgroundColor='base'
         borderColor='neutral-faded'
         borderRadius='large'
-        width='322px'
+        attributes={{ style: { minWidth: '322px' } }}
       >
         <View
           position='absolute'
           borderRadius='circular'
           padding={3}
           backgroundColor='base'
-          className={styles.cardCountContainer}
           textAlign='center'
+          attributes={{
+            style: {
+              border: '4px solid var(--rs-color-background-page)',
+              top: '-28px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              height: '50px',
+              width: '50px',
+              boxSizing: 'border-box',
+            },
+          }}
         >
           <Text color='neutral-faded' variant='body-strong-1'>
             {cardNumber}
@@ -52,18 +59,11 @@ export default function CardWithItems({
         </View>
         <View>
           <View direction='column'>
-            <View.Item gapBefore={3}>
-              <View direction='row' justify='center' align='center'>
-                <View>
-                  <Image
-                    src={icon}
-                    alt='Customers'
-                    height='100%'
-                    width='100%'
-                  />
-                </View>
+            <View direction='row' justify='center' align='center'>
+              <View>
+                <Image src={icon} alt='Customers' height='100%' width='100%' />
               </View>
-            </View.Item>
+            </View>
           </View>
         </View>
         <View
@@ -73,46 +73,43 @@ export default function CardWithItems({
           width='100%'
           height='100%'
         >
-          <View.Item gapBefore={3}>
-            <View
-              borderRadius='medium'
-              direction='row'
-              align='end'
-              width='100%'
-              height='100%'
-            >
-              <Card padding={0}>
-                <View
-                  direction='column'
-                  justify='end'
-                  gap={0.2}
-                  width='100%'
-                  height='100%'
-                  // align='stretch'
-                >
-                  {items.map((item) => (
-                    <View
-                      key={item.id}
-                      direction='row'
-                      gap={3}
-                      padding={3}
-                      backgroundColor='neutral'
-                    >
-                      <View>
-                        <Image
-                          src={item.icon}
-                          alt={item.title}
-                          height='100%'
-                          width='100%'
-                        />
-                      </View>
-                      <Text variant='body-strong-2'>{item.title}</Text>
+          <View
+            borderRadius='medium'
+            direction='row'
+            align='end'
+            width='100%'
+            height='100%'
+          >
+            <Card padding={0} attributes={{ style: { width: '100%' } }}>
+              <View
+                direction='column'
+                justify='end'
+                gap={0.5}
+                width='100%'
+                height='100%'
+              >
+                {items.map((item) => (
+                  <View
+                    key={item.id}
+                    direction='row'
+                    gap={3}
+                    padding={3}
+                    backgroundColor='neutral'
+                  >
+                    <View>
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        height='100%'
+                        width='100%'
+                      />
                     </View>
-                  ))}
-                </View>
-              </Card>
-            </View>
-          </View.Item>
+                    <Text variant='body-strong-2'>{item.title}</Text>
+                  </View>
+                ))}
+              </View>
+            </Card>
+          </View>
         </View>
       </View>
     </>
