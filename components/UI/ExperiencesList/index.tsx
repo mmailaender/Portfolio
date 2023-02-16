@@ -2,7 +2,6 @@
 
 import { Text, Timeline, View } from 'reshaped';
 import experiences from './experienceData.json';
-import styles from './experienceList.module.css';
 
 export default function ExperincesList() {
   return (
@@ -16,7 +15,9 @@ export default function ExperincesList() {
                 <Text
                   as='span'
                   variant='caption-1'
-                  className={styles.companyText}
+                  attributes={{
+                    style: { fontStyle: 'italic', marginLeft: '5px' },
+                  }}
                 >
                   {experience.company}
                 </Text>
@@ -30,7 +31,11 @@ export default function ExperincesList() {
           {(experience.description || experience.descriptionInItalicFont) && (
             <Text variant='body-1' color='neutral-faded'>
               {experience.descriptionInItalicFont && (
-                <Text className={styles.italicFont}>
+                <Text
+                  attributes={{
+                    style: { fontStyle: 'italic' },
+                  }}
+                >
                   {experience.descriptionInItalicFont}
                 </Text>
               )}
