@@ -1,8 +1,6 @@
 'use client';
 
-import Image from 'next/image';
-import { Card, Text, View } from 'reshaped';
-import styles from './cardWithItems.module.css';
+import { Card, Text, View, Image } from 'reshaped';
 
 type CardWithItemsPropsType = {
   cardNumber: number | string;
@@ -21,79 +19,93 @@ export default function CardWithItems({
     <>
       <View
         direction='column'
+        padding={3}
         gap={12}
-        paddingTop={12}
-        paddingBottom={3}
         backgroundColor='base'
         borderColor='neutral-faded'
         borderRadius='large'
-        width='322px'
+        attributes={{ style: { minWidth: '322px' } }}
       >
         <View
           position='absolute'
           borderRadius='circular'
           padding={3}
           backgroundColor='base'
-          className={styles.cardCountContainer}
           textAlign='center'
+          attributes={{
+            style: {
+              border: '4px solid var(--rs-color-background-page)',
+              top: '-28px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              height: '50px',
+              width: '50px',
+              boxSizing: 'border-box',
+            },
+          }}
         >
           <Text color='neutral-faded' variant='body-strong-1'>
             {cardNumber}
           </Text>
         </View>
-        <View paddingStart={3} paddingEnd={3}>
-          <Text variant='title-2' align='center'>
-            {stepTitle}
-          </Text>
+        <View direction='column'>
+          <View.Item gapBefore={9}>
+            <Text variant='title-2' align='center'>
+              {stepTitle}
+            </Text>
+          </View.Item>
+        </View>
+        <View direction='column'>
+          <View direction='row' justify='center' align='center'>
+            <View>
+              <Image src={icon} alt='Customers' height='100%' width='100%' />
+            </View>
+          </View>
         </View>
         <View
-          paddingTop={4}
-          paddingBottom={4}
-          direction='row'
-          justify='center'
-          align='center'
-        >
-          <Image src={icon} alt='Customers' height={172} width={197} />
-        </View>
-        <View
-          paddingStart={3}
-          paddingEnd={3}
-          borderRadius='medium'
-          direction='row'
-          align='end'
+          direction='column'
+          align='stretch'
+          justify='end'
           width='100%'
           height='100%'
         >
-          <Card padding={0} className={styles.itemsCard}>
-            <View
-              direction='column'
-              justify='end'
-              className={styles.listItems}
-              as='ul'
-            >
-              {items.map((item) => (
-                <View
-                  key={item.id}
-                  as='li'
-                  direction='row'
-                  gap={3}
-                  paddingTop={3}
-                  paddingBottom={3}
-                  paddingEnd={4}
-                  paddingStart={4}
-                  backgroundColor='neutral'
-                >
-                  <Image
-                    src={item.icon}
-                    height={20}
-                    width={20}
-                    alt={item.title}
-                  />
-                  <Text variant='body-strong-2'>{item.title}</Text>
-                </View>
-              ))}
-            </View>
-          </Card>
+          <View
+            borderRadius='medium'
+            direction='row'
+            align='end'
+            width='100%'
+            height='100%'
+          >
+            <Card padding={0} attributes={{ style: { width: '100%' } }}>
+              <View
+                direction='column'
+                justify='end'
+                gap={0.5}
+                width='100%'
+                height='100%'
+              >
+                {items.map((item) => (
+                  <View
+                    key={item.id}
+                    direction='row'
+                    gap={3}
+                    padding={3}
+                    backgroundColor='neutral'
+                  >
+                    <View>
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        height='100%'
+                        width='100%'
+                      />
+                    </View>
+                    <Text variant='body-strong-2'>{item.title}</Text>
+                  </View>
+                ))}
+              </View>
+            </Card>
+          </View>
         </View>
       </View>
     </>

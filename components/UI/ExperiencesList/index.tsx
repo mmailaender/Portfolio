@@ -2,20 +2,21 @@
 
 import { Text, Timeline, View } from 'reshaped';
 import experiences from './experienceData.json';
-import styles from './experienceList.module.css';
 
 export default function ExperincesList() {
   return (
     <Timeline>
       {experiences.map((experience) => (
-        <View key={experience.id}>
+        <View key={experience.id} gap={4}>
           <Text as='span' variant='body-strong-1' color='neutral'>
             {experience.role}
             {experience.company && (
               <Text
                 as='span'
                 variant='caption-1'
-                className={styles.companyText}
+                attributes={{
+                  style: { fontStyle: 'italic', marginLeft: '5px' },
+                }}
               >
                 {experience.company}
               </Text>
@@ -26,16 +27,18 @@ export default function ExperincesList() {
           </Text>
 
           {(experience.description || experience.descriptionInItalicFont) && (
-            <View paddingTop={4}>
-              <Text variant='body-1' color='neutral-faded'>
-                {experience.descriptionInItalicFont && (
-                  <Text className={styles.italicFont}>
-                    {experience.descriptionInItalicFont}
-                  </Text>
-                )}
-                {experience.description}
-              </Text>
-            </View>
+            <Text variant='body-1' color='neutral-faded'>
+              {experience.descriptionInItalicFont && (
+                <Text
+                  attributes={{
+                    style: { fontStyle: 'italic' },
+                  }}
+                >
+                  {experience.descriptionInItalicFont}
+                </Text>
+              )}
+              {experience.description}
+            </Text>
           )}
         </View>
       ))}
