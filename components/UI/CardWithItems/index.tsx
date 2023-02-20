@@ -48,21 +48,17 @@ export default function CardWithItems({
             {cardNumber}
           </Text>
         </View>
-        <View>
-          <View direction='column'>
-            <View.Item gapBefore={9}>
-              <Text variant='title-2' align='center'>
-                {stepTitle}
-              </Text>
-            </View.Item>
-          </View>
+        <View direction='column'>
+          <View.Item gapBefore={9}>
+            <Text variant='title-2' align='center'>
+              {stepTitle}
+            </Text>
+          </View.Item>
         </View>
-        <View>
-          <View direction='column'>
-            <View direction='row' justify='center' align='center'>
-              <View>
-                <Image src={icon} alt='Customers' height='100%' width='100%' />
-              </View>
+        <View direction='column'>
+          <View direction='row' justify='center' align='center'>
+            <View>
+              <Image src={icon} alt='Customers' height='100%' width='100%' />
             </View>
           </View>
         </View>

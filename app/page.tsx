@@ -66,7 +66,7 @@ export default function Home() {
 
       <View
         align='center'
-        gap={12}
+        gap={21}
         padding={5}
         direction='column'
         backgroundColor='base'

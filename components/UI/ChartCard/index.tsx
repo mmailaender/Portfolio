@@ -115,13 +115,11 @@ export default function ChartCard({ data }: ChartCardPropsType) {
                 </Popover.Trigger>
                 <Popover.Content>
                   <View gap={3}>
-                    <View>
-                      <Text color='primary' variant='body-strong-2'>
-                        {logo.category}
-                      </Text>
-                    </View>
+                    <Text color='primary' variant='body-strong-2'>
+                      {logo.category}
+                    </Text>
 
-                    <View width='250px' gap={3}>
+                    <View gap={3}>
                       <View direction='row' align={'center'} gap={2}>
                         <View width={{ s: '32px' }}>
                           <Image
@@ -134,9 +132,11 @@ export default function ChartCard({ data }: ChartCardPropsType) {
 
                         <Text variant='body-strong-1'>{logo.title}</Text>
                       </View>
-                    </View>
 
-                    <Text variant='caption-1'>{logo.description}</Text>
+                      <View width='250px'>
+                        <Text variant='caption-1'>{logo.description}</Text>
+                      </View>
+                    </View>
                   </View>
                 </Popover.Content>
               </Popover>
