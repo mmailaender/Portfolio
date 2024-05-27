@@ -1,2 +1,6 @@
-const postcss = require("reshaped/postcss");
-module.exports = postcss.config
+export default {
+	plugins: {
+		tailwindcss: {},
+		autoprefixer: {}
+	}
+};
