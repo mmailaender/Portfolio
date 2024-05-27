@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
+	import Files from './pdf-files.svelte';
 
 	const experiences = [
 		{
@@ -60,6 +61,24 @@
 	I am passionate about helping people become the best version of themself to positively impact our world.
 	Great technical products help me make this mission a reality.
 </p>
+
+<Files />
+
+<div class="flex justify-center">
+	<div class="w-full md:w-1/2">
+		<div class="relative" style="padding-top: 56.25%;">
+			<iframe
+				class="absolute left-0 top-0 h-full w-full"
+				src="https://www.youtube.com/embed/uNSXTxPHHXU?rel=0"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			>
+			</iframe>
+		</div>
+	</div>
+</div>
 
 <div class="mx-auto max-w-2xl">
 	<div class="border-l-2 border-blue-800 pl-4">

@@ -38,5 +38,9 @@
 		"vite": "^5.0.3",
 		"vitest": "^1.2.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"bits-ui": "^0.21.10",
+		"lucide-svelte": "^0.379.0"
+	}
 }

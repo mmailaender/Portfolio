@@ -11,7 +11,13 @@ export default {
 	],
 
 	theme: {
-		extend: {}
+		extend: {
+			spacing: {
+				128: '512px',
+				160: '640px',
+				192: '768px'
+			}
+		}
 	},
 
 	plugins: [
