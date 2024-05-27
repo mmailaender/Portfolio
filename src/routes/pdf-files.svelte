@@ -8,7 +8,7 @@
 <div class="flex flex-row gap-2">
 	<Dialog.Root>
 		<Dialog.Trigger
-			class="easy-in rounded-full border px-4 text-sm transition-all duration-200 text-surface-950-50 hover:border-surface-200-800"
+			class="easy-in rounded-full border px-4 text-sm transition-all duration-200 text-surface-950-50 border-surface-200-800 hover:border-surface-300-700"
 		>
 			{m.letterOfRecommendation()}
 		</Dialog.Trigger>

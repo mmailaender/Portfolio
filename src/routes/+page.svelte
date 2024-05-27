@@ -49,7 +49,7 @@
 			<Avatar src={'/favicon.png'} alt="skeleton" size="w-10" background="bg-transparent" />
 			<div class="flex flex-col">
 				<p class="text-sm font-extrabold text-surface-950-50">{m.name()}</p>
-				<p class="text-sm text-surface-500">{m.title()}</p>
+				<p class="text-sm text-surface-600-400">{m.title()}</p>
 			</div>
 		</div>
 		<Files />
@@ -60,7 +60,7 @@
 			<h1 class="h1 leading-tight tracking-tight text-surface-950-50">
 				{m.description_1()}
 			</h1>
-			<p class="text-lg text-surface-500">
+			<p class="text-lg text-surface-600-400">
 				{m.description_2()}
 			</p>
 		</div>
@@ -85,7 +85,7 @@
 
 	<div class=" flex flex-col pb-40">
 		{#each experiences as experience}
-			<div class=" grid grid-cols-12 gap-6 border-b py-6 border-surface-100-900">
+			<div class=" grid grid-cols-12 gap-6 border-b py-6 border-surface-200-800">
 				<div class="col-span-3 col-start-1 text-base font-bold">{experience.title}</div>
 				<div class="col-span-6 col-start-4 flex flex-col gap-2">
 					{#if experience.company}
@@ -93,13 +93,13 @@
 					{/if}
 
 					{#each experience.description as desc}
-						<p class=" text-base text-surface-500 {desc.startsWith('“') ? 'italic' : ''}">
+						<p class=" text-base text-surface-600-400 {desc.startsWith('“') ? 'italic' : ''}">
 							{desc}
 						</p>
 					{/each}
 				</div>
 				<div class="col-span-2 col-start-11">
-					<p class="w-full text-right text-base text-surface-500">
+					<p class="w-full text-right text-base text-surface-600-400">
 						{experience.date}
 					</p>
 				</div>
