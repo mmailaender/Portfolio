@@ -1,104 +1,108 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
 	import Files from './pdf-files.svelte';
+	import * as m from '$lib/paraglide/messages.js';
 
 	const experiences = [
 		{
-			title: 'Personal Coach',
+			title: m.experiences_personalCoach_title(),
 			company: '',
 			date: 'Jan 2022 - Present',
-			description: [
-				'Training continuously interpersonal skills. Part-time personal coaching to help others and get to know more personalities.'
-			]
+			description: [m.experiences_personalCoach_description1()]
 		},
 		{
-			title: 'CEO & Co-Founder',
+			title: m.experience_dechea_title(),
 			company: 'Dechea',
-			date: 'Aug 2020 - Present',
-			description: [
-				'“A medical software that helps people around the world to get the best treatment based on their circumstances.“',
-				'Driving the product strategy, creating the architecture & toolchain and mentoring the team to become better developers.'
-			]
+			date: m.experience_dechea_date(),
+			description: [m.experience_dechea_description1(), m.experience_dechea_description2()]
 		},
 		{
-			title: 'Project Lead',
-			company: 'BMW',
-			date: 'Jan 2019 - Jul 2020',
-			description: [
-				'Leading and coaching an agile team of 15 people. Ensuring the quality of the product outcome. Executing an IT product with a yearly budget of 2.5 million euros.'
-			]
-		},
-		{
-			title: 'Project Lead Assistant',
-			company: 'BMW',
-			date: 'Apr 2017 - Dec 2018',
-			description: [
-				'Assist in leading and coaching an agile team of 15 people. Ensuring the quality of the product outcome.'
-			]
-		},
-		{
-			title: 'Software Developer',
-			company: 'BMW',
-			date: 'Sep 2016 - Mar 2017',
-			description: [
-				'Developing a continuous delivery toolchain, creating automated tests, providing training documentation, serving customer requests.'
-			]
-		},
-		{
-			title: 'IT Specialist Apprenticeship',
+			title: m.experience_projectLead_title(),
 			company: 'doubleSlash',
-			date: 'Sep 2013 - Aug 2016',
+			date: m.experience_projectLead_date(),
+			description: [m.experience_projectLead_description1()]
+		},
+		{
+			title: m.experience_projectLeadAssistance_title(),
+			company: 'doubleSlash',
+			date: m.experience_projectLeadAssistance_date(),
+			description: [m.experience_projectLeadAssistance_description1()]
+		},
+		{
+			title: m.experience_softwareDeveloper_title(),
+			company: 'doubleSlash',
+			date: m.experience_softwareDeveloper_date(),
+			description: [m.experience_softwareDeveloper_description1()]
+		},
+		{
+			title: m.experience_apprenticeship_title(),
+			company: 'doubleSlash',
+			date: m.experience_apprenticeship_date(),
 			description: []
 		}
 	];
 </script>
 
-<Avatar src={'/favicon.png'} alt="skeleton" />
-<p>Micha</p>
-<p>CEO & Co-Founder, Personal Coach</p>
-<p>
-	Creator, mentor, tech-lover and philanthropist.<br />
-	I am passionate about helping people become the best version of themself to positively impact our world.
-	Great technical products help me make this mission a reality.
-</p>
+<div class="mx-64 flex max-w-[1512px] flex-col pt-8">
+	<div class="flex flex-row justify-between">
+		<div class="flex flex-row items-center gap-3">
+			<Avatar src={'/favicon.png'} alt="skeleton" size="w-10" background="bg-transparent" />
+			<div class="flex flex-col">
+				<p class="text-sm font-extrabold text-surface-950-50">{m.name()}</p>
+				<p class="text-sm text-surface-500">{m.title()}</p>
+			</div>
+		</div>
+		<Files />
+	</div>
 
-<Files />
-
-<div class="flex justify-center">
-	<div class="w-full md:w-1/2">
-		<div class="relative" style="padding-top: 56.25%;">
-			<iframe
-				class="absolute left-0 top-0 h-full w-full"
-				src="https://www.youtube.com/embed/uNSXTxPHHXU?rel=0"
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen
-			>
-			</iframe>
+	<div class="grid grid-cols-12 pt-40">
+		<div class="col-span-5 col-start-1 flex flex-col gap-6">
+			<h1 class="h1 leading-tight tracking-tight text-surface-950-50">
+				{m.description_1()}
+			</h1>
+			<p class="text-lg text-surface-500">
+				{m.description_2()}
+			</p>
+		</div>
+		<div class="col-span-6 col-start-7 pl-10">
+			<div class="w-full">
+				<div class="relative" style="padding-top: 56.25%;">
+					<iframe
+						class="absolute left-0 top-0 h-full w-full"
+						src="https://www.youtube.com/embed/uNSXTxPHHXU?rel=0"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					>
+					</iframe>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
 
-<div class="mx-auto max-w-2xl">
-	<div class="border-l-2 border-blue-800 pl-4">
+	<h2 class="h3 border-b pb-16 pt-64 border-surface-950-50">{m.experience()}</h2>
+
+	<div class=" flex flex-col pb-40">
 		{#each experiences as experience}
-			<div class="mb-8">
-				<div class="relative">
-					<div
-						class="absolute -left-6 top-1/3 h-4 w-4 -translate-y-1/2 transform rounded-full bg-blue-800"
-					></div>
-					<h3 class="text-xl font-bold">
-						{experience.title}
-						{#if experience.company}
-							<span class="text-base font-normal italic text-gray-400">{experience.company}</span>
-						{/if}
-					</h3>
-					<p class="text-sm text-gray-400">{experience.date}</p>
+			<div class=" grid grid-cols-12 gap-6 border-b py-6 border-surface-100-900">
+				<div class="col-span-3 col-start-1 text-base font-bold">{experience.title}</div>
+				<div class="col-span-6 col-start-4 flex flex-col gap-2">
+					{#if experience.company}
+						<span class="text-base font-bold">{experience.company}</span>
+					{/if}
+
+					{#each experience.description as desc}
+						<p class=" text-base text-surface-500 {desc.startsWith('“') ? 'italic' : ''}">
+							{desc}
+						</p>
+					{/each}
 				</div>
-				{#each experience.description as desc}
-					<p class="mt-2 {desc.startsWith('“') ? 'italic' : ''}">{desc}</p>
-				{/each}
+				<div class="col-span-2 col-start-11">
+					<p class="w-full text-right text-base text-surface-500">
+						{experience.date}
+					</p>
+				</div>
 			</div>
 		{/each}
 	</div>
