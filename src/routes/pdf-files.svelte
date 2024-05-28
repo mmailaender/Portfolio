@@ -21,7 +21,7 @@
 			<Dialog.Content
 				class="rounded-card-lg bg-background shadow-popover fixed left-[50%] top-[50%] z-50 h-full w-full max-w-[1000px] translate-x-[-50%] translate-y-[-50%] p-5 outline-none md:max-h-[94%]"
 			>
-				<Dialog.Title class="text-2xl font-bold text-surface-50-950"
+				<Dialog.Title class="text-2xl font-bold text-surface-100"
 					>{m.letterOfRecommendation()}</Dialog.Title
 				>
 				<Separator.Root class="bg-muted -mx-5 mb-6 mt-5 block h-px" />
@@ -65,7 +65,7 @@
 			<Dialog.Content
 				class="rounded-card-lg bg-background shadow-popover fixed left-[50%] top-[50%] z-50 h-full w-full max-w-[1000px] translate-x-[-50%] translate-y-[-50%] p-5 outline-none md:max-h-[94%]"
 			>
-				<Dialog.Title class="text-2xl font-bold text-surface-50-950"
+				<Dialog.Title class="text-2xl font-bold text-surface-100"
 					>{m.jobReference()} doubleSlash GmbH</Dialog.Title
 				>
 				<Separator.Root class="bg-muted -mx-5 mb-6 mt-5 block h-px" />
@@ -84,7 +84,6 @@
 						<button type="button" class="btn-icon preset-filled-surface-50-950"
 							><X class="text-foreground " /></button
 						>
-
 						<span class="sr-only">Close</span>
 					</div>
 				</Dialog.Close>
