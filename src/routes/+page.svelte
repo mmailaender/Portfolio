@@ -39,6 +39,12 @@
 			company: 'doubleSlash',
 			date: m.experience_apprenticeship_date(),
 			description: []
+		},
+		{
+			title: 'Mittlere Reife',
+			company: 'Graf-Soden-Realschule Friedrichshafen',
+			date: 'Bis Jul 2013',
+			description: []
 		}
 	];
 </script>
