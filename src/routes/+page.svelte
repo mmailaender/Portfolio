@@ -74,15 +74,6 @@
 			<div class="col-span-6 col-start-7 pt-10 lg:pl-10 lg:pt-0">
 				<div class="w-full">
 					<div class="relative" style="padding-top: 56.25%;">
-						<iframe
-							class="absolute left-0 top-0 h-full w-full overflow-hidden rounded-xl"
-							src="https://www.youtube.com/embed/uNSXTxPHHXU?rel=0"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen
-						>
-						</iframe>
 					</div>
 				</div>
 			</div>
