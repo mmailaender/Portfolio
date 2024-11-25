@@ -53,7 +53,7 @@
 	<div class="mx-6 flex max-w-[1280px] flex-col pt-8 md:mx-12 xl:mx-64">
 		<div class="flex w-full flex-col justify-between md:flex-row">
 			<div class="flex w-full flex-row items-center gap-3 pb-8 md:pb-0">
-				<Avatar src={'/favicon.png'} alt="skeleton" size="w-10" background="bg-transparent" />
+				<Avatar src={'/favicon.png'} name="Micha" size="size-10" background="bg-transparent" />
 				<div class="flex flex-col">
 					<p class="text-sm font-extrabold text-surface-950-50">{m.name()}</p>
 					<p class="text-sm text-surface-600-400">{m.title()}</p>
@@ -73,8 +73,7 @@
 			</div>
 			<div class="col-span-6 col-start-7 pt-10 lg:pl-10 lg:pt-0">
 				<div class="w-full">
-					<div class="relative" style="padding-top: 56.25%;">
-					</div>
+					<div class="relative" style="padding-top: 56.25%;"></div>
 				</div>
 			</div>
 		</div>
